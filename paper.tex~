@@ -535,7 +535,7 @@ As this decay is a three-body process, the amplitude $A_{n}(p)$ for the $n^{\rm{
 \begin{equation}
     A_{n}(p) = P_{n}(p)S_{n}(p)F_{n}^{r}(p)F_{n}^{D}(p), \label{base-amplitude}
 \end{equation}
-where $p$ refers to the set of the three daughter particles' four-momenta, $P_{n}(P)$ is the propagator, $S_{n}(p)$ is the spin factor constructed with the covariant tensor formalism~\cite{covariant-tensors}, 
+where $p$ refers to the set of the three daughter particles' four-momenta, $P_{n}(p)$ is the propagator, $S_{n}(p)$ is the spin factor constructed with the covariant tensor formalism~\cite{covariant-tensors}, 
 $F_{n}^{r}(p)$ and $F_{n}^{D}(p)$ are the Blatt-Weisskopf barrier factor for the intermediate resonance and $D_{s}$ meson, respectively.
 According to the isobar formulation, the total amplitude $M(p)$ is obtained by the coherent sum of all intermediate modes:
 \begin{equation}
