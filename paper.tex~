@@ -84,7 +84,8 @@ Knowledge of the substructures in $D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$ deca
             \end{tabular}
         \end{center}
     \end{table*}
-    From Table~\ref{PreviousAnalyses}, we can see an obvious difference of decay fraction of $S(980)\pi^{+}$ between BABAR and CLEO-c.  
+    From Table~\ref{PreviousAnalyses}, we can see an obvious difference of decay fraction of $S(980)\pi^{+}$ between BABAR and CLEO-c. 
+    Here S(980) denotes the $a_{0}(980)$ and $f_{0}(980)$ resonances.
     In this analysis with the double tag method, we can get a nearly background free data sample, which is good to perform the amplitude analysis.
 
     In addition, experimental measurements can help to refine theoretical models~\cite{PRD93-114010}.
@@ -155,12 +156,12 @@ The candidates with an invariant mass for $\pi^{+}\pi^{-}\eta$ falling into the 
 $\pi^{+}\pi^{-}$ pairs are used to reconstruct $K_{S}^{0}$ mesons.
 The polar angles $\theta$ of the two pions should satisfy $|cos\theta| < 0.93$.
 The distances of the two pions should from the interaction point along the beam direction should be less than 20 cm. 
-The invariant mass $M(\pi^{+}\pi^{-}$ of $\pi^{+}\pi^{-}$ pairs  should satisfy $0.487 < |cos\theta| < 0.511$ GeV/$c^{2}$.
+The invariant mass $M(\pi^{+}\pi^{-})$ of $\pi^{+}\pi^{-}$ pairs  should satisfy $0.487 < M(\pi^{+}\pi^{-}) < 0.511$ GeV/$c^{2}$.
 The decay length and the decay length error of $K_{S}^{0}$ are obtained with second vertex fit.
 We require the decay length over the decay length error to be less than 2.
 
 Then the $D_{s}$ candidates are reconstructed from $K^{\pm}$, $\pi^{\pm}$, $\eta$, $\eta^{'}$, $K_{S}^{0}$ and $\pi^{0}$.
-We reserve the candidates with an invariant mass $M(D_{s}$ falling in the mass window $[1.87, 2.06]$ GeV/$c^{2}$ and an recoiling mass $M_{rec}$ falling in the mass window $[2.051, 2.180]$ GeV/$c^{2}$.
+We reserve the candidates with an invariant mass $M(D_{s})$ falling in the mass window $[1.87, 2.06]$ GeV/$c^{2}$ and an recoiling mass $M_{rec}$ falling in the mass window $[2.051, 2.180]$ GeV/$c^{2}$.
 $M_{rec}$ is defined as:
 \begin{equation}
     M_{rec} = \sqrt{(E_{cm} - \sqrt{| \vec p_{D_{s}} |^{2} + m_{D_{s}}^{2}})^{2} - |\vec p_{cm} - \vec p_{D_{s}} | ^{2}} \; , \label{con:inventoryflow}
@@ -300,7 +301,7 @@ Assuming N is the number of events for a given mass interval, the angular distri
     According to Eq.~\ref{S-wave parameters}, the S(980) central mass is much lower than the threshold of $m(K^{+}K^{-}$ (about 0.988 GeV/$c^{2}$).
     So the distribution of $\phi_{S}$ is expected to be a flat curve decreasing slowly.
     Then the red curve decreasing rapidly near the nominal mass of $\phi(1020)$ is chosen as the physical solution.
-    From Eq.~\ref{RBW} in Sec.~\ref{propagator}, we can get the phase of $\phi(1020)$ $\phi_{P}$.
+    From Eq.~\ref{RBW} in Sec.~\ref{propagator}, we can get the phase $\phi_{P}$ of $\phi(1020)$.
     Then we can obtain the phase of $S(980)$ $\phi_{S}$ by adding $\phi_{SP}$ and $\phi_{P}$, as shown in Fig~\ref{SP}(d).
     The values of $\left|S\right|^{2}$ (arbitrary units), $\left|P\right|^{2}$ (arbitrary units) and $\phi_{S}$ in every mass interval of the threshold region are listed in Table~\ref{SP-values}.
     \begin{table*}[htbp]
