@@ -1,0 +1,32 @@
+doubletag_deltaE_mode2.pdf  doubletag_delta_mode2.pdf  doubletag_mbc_mode2.pdf  doubletag_tag_deltaE_mode2.pdf  doubletag_tag_mbc_mode2.pdf
+*smallY*.pdf
+from /home/baiciank/frombes/FourBody/Roy_funding
+
+stag_mode2_*_mbcfit.pdf
+from /home/baiciank/frombes/FourBody/stag_peakingbg_study
+
+Ks_study*.pdf
+from /home/baiciank/frombes/FourBody/_sample_Mode2test/PWA_KsStudy/
+
+
+2Dfit_mode2_2.pdf 2Dfit_mode2_1.pdf
+from /home/baiciank/frombes/FourBody/2DmBC_fit
+
+DTag_multiple.pdf
+from /home/baiciank/frombes/FourBody/_sample_Mode2test/PWA_KsStudy_from_chargetracks/plot_projection.C
+
+Ks_mass_comparison.pdf
+from /home/baiciank/frombes/FourBody/_sample_Mode2test/PWA_KsStudy_from_chargetracks/plot_projection.C
+
+smallest_dang.pdf
+
+
+
+fitresult_2.pdf
+fitresult_signalside_mode2.pdf
+fitresult_tagside_mode2.pdf
+fitresult_2D_mode2.pdf
+/home/baiciank/frombes/FourBody/doubletag_efficiency
+
+
+

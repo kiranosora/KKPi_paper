@@ -1,0 +1,124 @@
+
+%\section{Introduction}
+%\label{sec:introduction}
+%
+%
+%
+%%------------------------------------------------------------------------------
+%\section{BESIII Detector and Data Sets}
+%\label{sec:detector_dataset}
+%The BESIII detector is a magnetic spectrometer~\cite{BESIII} located at the Beijing Electron Positron Collider (BEPCII)~\cite{BEPCII}.
+%The subdetectors surrounded by the superconducting solenoidal magnet, which provide a 1.0 T magnetic field, starting from the interaction point consist of  a main drift chamber (MDC), a plastic scintillator time of flight counters (TOF), a CsI(Tl) electromagnetic calorimeter (EMC).
+%Charged particle identification is performed by combining the ionization energy loss  measured by MDC and the time-of-flight measured by TOF.
+%EMC provides the shower information to reconstruct photons.
+%Outside the solenoidal magnet is a multi-gap resistive-plate chamber system (MRPC), which provides muon identification.
+%
+%Monte Carlo (MC) samples are produced with the GEANT4-based~\cite{GEANT4} package.
+%An inclusive MC sample is produced at $E_{cm}$ = 4.178 GeV.
+%The sample includes all known open charm decays, the continuum processes ( $e^{+}e^{-} \rightarrow q\bar{q}$, q = u, d and s), Bhabha scattering, $\mu^{+}\mu^{-}$, $\tau^{+}\tau^{-}$, diphoton process and the $c\bar{c}$ resonances $J/\psi$, $\psi(3686)$ and $\psi(3770)$ via the initial state radiation (ISR).
+%The generator CONEXC~\cite{CONEXC} is used to model the open charm processes directly produced via $e^{+}e^{-}$ annihilation.
+%The simulation of ISR production of $\psi(3770)$, $\psi(3686)$ and $J/\psi$ is performed with the KKMC~\cite{KKMC} package.
+%The final-state radiation from charged tracks is produced by the PHOTOS package~\cite{PHOTOS}.
+%The known decays with BFs taken from Particle Data Group (PDG)~\cite{PDG} are simulated with the EVTGEN package~\cite{EVTGEN} and
+%the unknown decays are generated with the LUNDCHARM model~\cite{LUNDCHARM}.
+%The inclusive MC (generic MC) is used to perform background analysis. 
+%%------------------------------------------------------------------------------
+%\section{Event Selection}
+%\label{chap:event_selection}
+%%\label{selection}
+%For charged tracks except for those from $K_{S}^{0}$ decays, the polar angles ($\theta$) respect to the beam axis  must satisfy $|cos\theta| < 0.93$.
+%The distances of charged tracks from the interaction point in the transverse plane and along the beam direction should be less than 1 cm and 10 cm, respectively.
+%
+%Photons are reconstructed from the cluster shower in EMC.
+%The deposit energy of the photons from the endcap ($0.86 < |cos\theta| < 0.92$) should be larger than 50 MeV and that of the photons from the barrel ($|cos\theta| < 0.8$) should be larger than 25 MeV.
+%Furthermore, the shower time from the event start time should be within 700 ns.
+%
+%We reconstruct $\pi^{0} (\eta)$ candidates through $\pi^{0} \rightarrow \gamma\gamma$ ($\eta \rightarrow \gamma\gamma$).
+%The diphoton invariant mass $M_{\gamma\gamma}$ for $\pi^{0}$ and $\eta$ should be in the range of 0.115 $< M_{\gamma\gamma} <$ 0.150 GeV/$c^{2}$ and 0.490 $< M_{\gamma\gamma} <$ 0.580 GeV/$c^{2}$, respectively.
+%Then we perform a fit to constrain $M_{\gamma\gamma}$ to the $\pi^{0}$ or $\eta$ nominal mass ~\cite{PDG}.
+%The $\pi^{0}$ or $\eta$ candidates with a $\chi^{2}_{1C}$ less than 30 are retained.
+%
+%Kaons and pions are identified by the combining the information of dE/dx in the MDC and the time-of-flight from the TOF.
+%If the probability of the kaon hypothesis is larger than that of the pion hypothesis, the charged track is identified as a kaon.
+%Otherwise, the track is identified as a pion.
+%
+%We vote the $\pi^{\pm}$ and $pi^{0}$ whose momentum is less than 0.1 GeV to remove soft $\pi^{\pm}$ and $\pi^{0}$ from $D^{*}$ decays.
+%
+%The $\eta^{'}$ candidates are reconstructed via the process $\eta^{'} \rightarrow \pi^{+}\pi^{-}\eta$.
+%The candidates with an invarian mass for $\pi^{+}\pi^{-}\eta$ falling into the range of $[0.938, 0.978]$ GeV/$c^{2}$ are retained.
+%
+%$\pi^{+}\pi^{-}$ pairs are used to reconstruct $K_{S}^{0}$ mesons.
+%The polar angles $\theta$ of the two pions should satisfy $|cos\theta| < 0.93$.
+%The distances of the two pions should from the interaction point along the beam direction should be less than 20 cm. 
+%The invariant mass $M(\pi^{+}\pi^{-}$ of $\pi^{+}\pi^{-}$ pairs  should satisfy $0.487 < |cos\theta| < 0.511$ GeV/$c^{2}$.
+%The decay length and the decay length error of $K_{S}^{0}$ are obtained with second vertex fit.
+%We require the decay length over the decay length error to be less than 2.
+%
+%Then the $D_{s}$ candidates are reconstructed from $K^{\pm}$, $\pi^{\pm}$, $\eta$, $\eta^{'}$, $K_{S}^{0}$ and $\pi^{0}$.
+%We reserve the candidates with an invariant mass $M(D_{s}$ falling in the mass window $[1.87, 2.06]$ GeV/$c^{2}$ and an recoiling mass $M_{rec}$ falling in the mass window $[2.051, 2.180]$ GeV/$c^{2}$.
+%$M_{rec}$ is defined as:
+%\begin{equation}
+%    M_{rec} = \sqrt{(E_{cm} - \sqrt{| \vec p_{D_{s}} |^{2} + m_{D_{s}}^{2}})^{2} - |\vec p_{cm} - \vec p_{D_{s}} | ^{2}} \; , \label{con:inventoryflow}
+%\end{equation}
+%where $p_{D_{s}}$ is the momentum of $D_{s}$ candidate, $m_{D_{s}}$ is $D_{s}$ mass quoted from PDG~\cite{PDG},
+%and $\vec p_{cm}$ and $\vec p_{D_{s}}$ are the momentum of the initial state and the decay products of the $D_{s}$ candidate, respectively. 
+%
+
+
+\section{Partial Wave Analysis in the Low $K^{+}K^{-}$ Mass Region}
+\label{Amplitude Analysis}
+As it's very hard to distinguish $a_{0}(980)$ and $f_{0}(980)$ in the low $K^{+}K^{-}$ mass region, we use S(980) to denote the $a_{0}(980)$ and $f_{0}(980)$ resonances and we perform a model-independent partial wave analysis (MIPWA) to extract S(980) line shape near the threshold of $K^{+}K^{-}$ mass spectrum.
+
+After the selection in Sec.~\ref{chap:event_selection}, for each $D_{s}$ candidates decaying to  $K^{+}K^{-}\pi^{+}$ in an event, all daughter tracks are added to apply a 1C kinematic fit constraining the mass of $D_{s}$.
+Then we select the candidate with minimum $\chi^{2}_{1C}$ as the best candidate in an event.
+We define the invariant mass of the $D_{s}$ with opposite charge to the signal $D_{s}$ as $M_{oth} = \sqrt{ (E_{cm} - \sqrt{| \vec p_{D_{s}} |^{2} + m_{D_{s}}} - E_{\gamma})^{2} - |\vec p_{cm} - \vec p_{D_{s}} - \vec p_{\gamma}| ^{2}   }$, where $E_{\gamma}$ and $\vec p_{\gamma}$ refer to the energy and momentum of gamma from the process $D_{s}^{*} \rightarrow D_{s}\gamma$.
+The good gamma with $M_{oth}$ closest to the nominal $D_{s}$  mass~\cite{PDG} is taken as the gamma from the decay $D_{s}^{*} \rightarrow D_{s}\gamma$.
+
+Multi-variable analysis (MVA) method~\cite{TMVA} is used to suppress the background.
+With the gradient boosted decision tree (BDTG) classifier provided by MVA, we train MVA separately with two sets of variables for the two categories depending on the $D_{s}^{+}$ origin.
+Two categories of events are selected in a $M_{rec} - \Delta M$ 2D plane, where $\Delta M \equiv M(D_{s}^{+}\gamma) - M(D_{s}^{+})$, $M(D_{s}^{+})$ is the invariant mass of signal $D_{s}$ and $M(D_{s}^{+}\gamma)$ refers to the invariant mass of $D_{s}$ and the gamma from $D_{s}^{*} \rightarrow D_{s}\gamma$, as shown in Fig.~\ref{2DAll}.
+
+\begin{figure*}[htbp]
+ \centering
+ \mbox{
+  %\vskip -1.5cm
+  \begin{overpic}[width=0.48\textwidth]{plot/2DAll.png}
+  \end{overpic}
+ }
+ \caption{Two dimensional plane of ${M_{rec}}$ versus ${\Delta{M} \equiv M(D_{s}^{+}\gamma) - M(D_{s}^{+})}$ from the simulated ${D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}}$ decays. The red (green) dashed lines mark the mass window for the $D_{s}^{+}$ Cat.~\#0 ( Cat.~\#1) around the $M_{rec}$ ($\Delta{M}$) peak. }
+\label{2DAll}
+\end{figure*}
+
+
+
+%
+%
+%%------------------------------------------------------------------------------
+%\section{Amplitude Analysis}
+%\label{Amplitude Analysis}
+%
+%
+%
+%
+%
+%
+%%------------------------------------------------------------------------------
+%\section{Branching Fraction}
+%
+%
+%
+%%------------------------------------------------------------------------------
+%
+%
+%%------------------------------------------------------------------------------
+%\section{Conclusion}
+%\label{CONLUSION}
+%
+%
+%
+%
+%\begin{acknowledgements}
+%\label{sec:acknowledgement}
+%\vspace{-0.4cm}
+%\end{acknowledgements}
+%

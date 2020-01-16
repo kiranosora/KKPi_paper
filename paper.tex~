@@ -1,0 +1,1168 @@
+\RequirePackage[displaymath]{lineno} % Display line numbers
+%\RequirePackage{lineno} % Display line numbers
+\documentclass[aps,prd,twocolumn,showpacs,amsmath,amssymb]{revtex4-1}
+%\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{ltablex,booktabs}
+\usepackage{overpic}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{mathcomp}
+\usepackage{mathrsfs}
+\usepackage{multirow}
+%%\usepackage{supertabular}
+\usepackage{rotating}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{tabularx}
+%\usepackage{booktabs}
+%\usepackage{setspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\normalsize
+\parskip=5pt plus 1pt minus 1pt
+
+%\setpagewiselinenumbers
+\linenumbers
+\title{ \boldmath Amplitude Analysis and Branching Fraction Measurement of $D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$ }
+\vspace{-1cm}
+\author{\input{author_201804}}
+
+\affiliation{}
+\vspace{-4cm}
+\date{\today}
+%\setpagewiselinenumbers
+\begin{abstract}
+  We report the amplitude analysis and branching fraction measurement of $D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$ decay using a data sample of 3.19 $\rm fb^{-1}$ recorded with BESIII detector at a center-of-mass energy of 4.178 GeV. 
+  We perform a model-independent partial wave analysis (MIPWA) in the low $K^{+}K^{-}$ region to extract the $K^{+}K^{-}$ $\mathcal{S}$-wave lineshape. 
+  We also perform an amplitude analysis on a nearly background free sample of 4399 events to investigate the substructure, and determine the relative fractions and the phases among the different intermediate processes.
+  The amplitude analysis results provide an accurate detection efficiency and allow us to measure the branching fraction of $D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$ to be $\mathcal{B}(D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+})=(5.47\pm0.08_{stat.}\pm0.13_{sys.})\%$.
+\end{abstract}
+\pacs{13.20.Fc, 12.38.Qk, 14.40.Lb}
+\maketitle
+
+%%------------------------------------------------------------------------------
+
+\section{Introduction}
+\label{sec:introduction}
+    
+
+Knowledge of the substructures in $D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$ decay allows us to properly determine the detection efficiency when measuring its branching fraction.
+    Dalitz plot analyses of this decay have been performed by the E687~\cite{E687RES}, CLEO ~\cite{2009CLEO} and Babar~\cite{2011BARBAR} collaborations.
+    E687 used about 700 events and did not take $f_{0}(1370)\pi^{+}$ into account. 
+    For CLEO-c, about 14400 events with purity about 84.9\% were selected with the single tag method.
+    The analysis of BARBAR used about 100000 events with purity about 95\%. 
+    Table~\ref{PreviousAnalyses} shows the comparision of the fitted decay fractions with the Dalitz plot analyses of previous analyses.
+\begin{table*}[htbp]
+    \caption{Comparison between Babar, CLEO-c and E687 Dalitz plot analysis.}
+    \label{PreviousAnalyses}
+    \begin{center}
+        \begin{tabular}{cccc}
+            \hline\hline
+            Decay mode & Fit fraction(BABAR)  & Fit fraction(CLEO-c)  & Fit fraction(E687)\\
+            \midrule
+            $D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$              & 47.9$\pm$0.5$\pm$0.5  & 47.4$\pm$1.5$\pm$0.4& 47.8$\pm$4.6$\pm$4.0 \\
+            $D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$                      & 41.4$\pm$0.8$\pm$0.5  & 42.2$\pm$1.6$\pm$0.3& 39.6$\pm$3.3$\pm$4.7 \\
+            $D_{s}^{+} \rightarrow S(980)\pi^{+}$    & 16.4$\pm$0.7$\pm$2.0  & 28.2$\pm$1.9$\pm$1.8& 11.0$\pm$3.5$\pm$2.6 \\
+            %$D_{s}^{+} \rightarrow f_{0}(980)\pi^{+}/a_{0}(980)\pi^{+}$    & 16.4$\pm$0.7$\pm$2.0  & 28.2$\pm$1.9$\pm$1.8& 11.0$\pm$3.5$\pm$2.6 \\
+            $D_{s}^{+} \rightarrow \bar{K}^{*}_{0}(1430)^{0}K^{+}$         & 2.4$\pm$0.3$\pm$1.0   & 3.9$\pm$0.5$\pm$0.5 & 9.3$\pm$3.2$\pm$3.2  \\
+            $D_{s}^{+} \rightarrow f_{0}(1710)\pi^{+}$                     & 1.1$\pm$0.1$\pm$0.1   & 3.4$\pm$0.5$\pm$0.3 & 3.4$\pm$2.3$\pm$3.5  \\
+            $D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$                     & 1.1$\pm$0.1$\pm$0.2   & 4.3$\pm$0.6$\pm$0.5 & ...                  \\ 
+            $\begin{matrix}\sum FF(\%)\end{matrix}$                          & 110.2$\pm$0.6$\pm$2.0 & 129.5$\pm$4.4$\pm$2.0 & 111.1\\
+                \midrule
+                $\chi^{2}/NDF$                                                  & $\frac{2843}{2305-14}=1.2$ & $\frac{178}{117}=1.5$ & $\frac{50.2}{33}=1.5$\\
+                \midrule
+                Events                                                         &$96307\pm369$          &$12226\pm22$  &$701\pm36$\\
+                \hline\hline
+            \end{tabular}
+        \end{center}
+    \end{table*}
+    From Table~\ref{PreviousAnalyses}, we can see an obvious difference of decay fraction of $S(980)\pi^{+}$ between BABAR and CLEO-c.  
+    In this analysis with the double tag method, we can get a nearly background free data sample, which is good to perform the amplitude analysis.
+
+    In addition, experimental measurements can help to refine theoretical models~\cite{PRD93-114010}.
+    Table~\ref{theory-pre} shows the predictions of the branching fractions of $D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$ and $D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$, which can be obtained according to this analysis.
+    \begin{table*}[htbp]
+        \caption{
+            $\mathcal{B}(A1)$, $\mathcal{B}(S4)$, $\mathcal{B}(pole)$ and $\mathcal{B}(FAT[mix])$ are 4 theory predictions~\cite{PRD93-114010}. 
+        }
+        \label{theory-pre}
+        \begin{center}
+            \begin{tabular}{cccccccc}
+                \hline\hline
+                Mode &  $\mathcal{B}(A1)$ (\%)& $\mathcal{B}(S4)$ (\%)&  $\mathcal{B}(pole)$ (\%)&$\mathcal{B}(FAT[mix])$ (\%)&\\
+                $D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$           & $3.92\ \pm\ 1.13$  & $3.93\ \pm\ 1.10$  & $4.2\ \pm\ 1.7$  & $4.07$  \\
+                $D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$                   & $4.49\ \pm\ 0.40$  & $4.51\ \pm\ 0.43$  & $4.3\ \pm\ 0.6$  & $3.4$  \\
+                %Mode & $\mathcal{B}(exp)$ (\%)   & $\mathcal{B}(A1)$ (\%)& $\mathcal{B}(S4)$ (\%)& $\mathcal{B}(pole)$ (\%)& $\mathcal{B}(FAT[mix])$ (\%) \\
+                %$D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$           & $3.94\ \pm\ 0.12$    & $3.92\ \pm\ 1.13$  & $3.93\ \pm\ 1.10$  & $4.2\ \pm\ 1.7$  & $4.07$\\
+                %$D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$                   & $4.60\ \pm\ 0.17$    & $4.49\ \pm\ 0.40$  & $4.51\ \pm\ 0.43$  & $4.3\ \pm\ 0.6$  & $3.4$\\
+                \hline
+                \hline\hline
+            \end{tabular}
+        \end{center}
+    \end{table*}
+
+    %------------------------------------------------------------------------------
+    \section{BESIII Detector and Data Sets}
+    \label{sec:detector_dataset}
+    The BESIII detector is a magnetic spectrometer~\cite{BESIII} located at the Beijing Electron Positron Collider (BEPCII)~\cite{BEPCII}.
+    The subdetectors surrounded by the superconducting solenoidal magnet, which provide a 1.0 T magnetic field, starting from the interaction point consist of  a main drift chamber (MDC), a plastic scintillator time of flight counters (TOF), a CsI(Tl) electromagnetic calorimeter (EMC).
+Charged particle identification is performed by combining the ionization energy loss  measured by MDC and the time-of-flight measured by TOF.
+EMC provides the shower information to reconstruct photons.
+Outside the solenoidal magnet is a multi-gap resistive-plate chamber system (MRPC), which provides muon identification.
+
+Monte Carlo (MC) samples are produced with the GEANT4-based~\cite{GEANT4} package.
+An inclusive MC sample is produced at $E_{cm}$ = 4.178 GeV.
+The sample includes all known open charm decays, the continuum processes ( $e^{+}e^{-} \rightarrow q\bar{q}$, q = u, d and s), Bhabha scattering, $\mu^{+}\mu^{-}$, $\tau^{+}\tau^{-}$, diphoton process and the $c\bar{c}$ resonances $J/\psi$, $\psi(3686)$ and $\psi(3770)$ via the initial state radiation (ISR).
+The generator CONEXC~\cite{CONEXC} is used to model the open charm processes directly produced via $e^{+}e^{-}$ annihilation.
+The simulation of ISR production of $\psi(3770)$, $\psi(3686)$ and $J/\psi$ is performed with the KKMC~\cite{KKMC} package.
+The final-state radiation from charged tracks is produced by the PHOTOS package~\cite{PHOTOS}.
+The known decays with BFs taken from Particle Data Group (PDG)~\cite{PDG} are simulated with the EVTGEN package~\cite{EVTGEN} and
+the unknown decays are generated with the LUNDCHARM model~\cite{LUNDCHARM}.
+The inclusive MC (generic MC) is used to perform background analysis. 
+%------------------------------------------------------------------------------
+\section{Event Selection}
+\label{chap:event_selection}
+%\label{selection}
+For charged tracks except for those from $K_{S}^{0}$ decays, the polar angles ($\theta$) respect to the beam axis  must satisfy $|cos\theta| < 0.93$.
+The distances of charged tracks from the interaction point in the transverse plane and along the beam direction should be less than 1 cm and 10 cm, respectively.
+
+Photons are reconstructed from the cluster shower in EMC.
+The deposit energy of the photons from the endcap ($0.86 < |cos\theta| < 0.92$) should be larger than 50 MeV and that of the photons from the barrel ($|cos\theta| < 0.8$) should be larger than 25 MeV.
+Furthermore, the shower time from the event start time should be within 700 ns.
+
+We reconstruct $\pi^{0} (\eta)$ candidates through $\pi^{0} \rightarrow \gamma\gamma$ ($\eta \rightarrow \gamma\gamma$).
+The diphoton invariant mass $M_{\gamma\gamma}$ for $\pi^{0}$ and $\eta$ should be in the range of 0.115 $< M_{\gamma\gamma} <$ 0.150 GeV/$c^{2}$ and 0.490 $< M_{\gamma\gamma} <$ 0.580 GeV/$c^{2}$, respectively.
+Then we perform a fit to constrain $M_{\gamma\gamma}$ to the $\pi^{0}$ or $\eta$ nominal mass ~\cite{PDG}.
+The $\pi^{0}$ or $\eta$ candidates with a $\chi^{2}_{1C}$ less than 30 are retained.
+
+Kaons and pions are identified by the combining the information of dE/dx in the MDC and the time-of-flight from the TOF.
+If the probability of the kaon hypothesis is larger than that of the pion hypothesis, the charged track is identified as a kaon.
+Otherwise, the track is identified as a pion.
+
+We vote the $\pi^{\pm}$ and $pi^{0}$ whose momentum is less than 0.1 GeV to remove soft $\pi^{\pm}$ and $\pi^{0}$ from $D^{*}$ decays.
+
+The $\eta^{'}$ candidates are reconstructed via the process $\eta^{'} \rightarrow \pi^{+}\pi^{-}\eta$.
+The candidates with an invariant mass for $\pi^{+}\pi^{-}\eta$ falling into the range of $[0.938, 0.978]$ GeV/$c^{2}$ are retained.
+
+$\pi^{+}\pi^{-}$ pairs are used to reconstruct $K_{S}^{0}$ mesons.
+The polar angles $\theta$ of the two pions should satisfy $|cos\theta| < 0.93$.
+The distances of the two pions should from the interaction point along the beam direction should be less than 20 cm. 
+The invariant mass $M(\pi^{+}\pi^{-}$ of $\pi^{+}\pi^{-}$ pairs  should satisfy $0.487 < |cos\theta| < 0.511$ GeV/$c^{2}$.
+The decay length and the decay length error of $K_{S}^{0}$ are obtained with second vertex fit.
+We require the decay length over the decay length error to be less than 2.
+
+Then the $D_{s}$ candidates are reconstructed from $K^{\pm}$, $\pi^{\pm}$, $\eta$, $\eta^{'}$, $K_{S}^{0}$ and $\pi^{0}$.
+We reserve the candidates with an invariant mass $M(D_{s}$ falling in the mass window $[1.87, 2.06]$ GeV/$c^{2}$ and an recoiling mass $M_{rec}$ falling in the mass window $[2.051, 2.180]$ GeV/$c^{2}$.
+$M_{rec}$ is defined as:
+\begin{equation}
+    M_{rec} = \sqrt{(E_{cm} - \sqrt{| \vec p_{D_{s}} |^{2} + m_{D_{s}}^{2}})^{2} - |\vec p_{cm} - \vec p_{D_{s}} | ^{2}} \; , \label{con:inventoryflow}
+\end{equation}
+where $p_{D_{s}}$ is the momentum of $D_{s}$ candidate, $m_{D_{s}}$ is $D_{s}$ mass quoted from PDG~\cite{PDG},
+and $\vec p_{cm}$ and $\vec p_{D_{s}}$ are the momentum of the initial state and the decay products of the $D_{s}$ candidate, respectively. 
+
+
+
+\section{Partial Wave Analysis in the Low $K^{+}K^{-}$ Mass Region}
+\label{MIPWA}
+As it's very hard to distinguish $a_{0}(980)$ and $f_{0}(980)$ in the low $K^{+}K^{-}$ mass region, we use S(980) to denote the $a_{0}(980)$ and $f_{0}(980)$ resonances and we perform a model-independent partial wave analysis (MIPWA) to extract S(980) line shape near the threshold of $K^{+}K^{-}$ mass spectrum.
+
+After the selection in Sec.~\ref{chap:event_selection}, for each $D_{s}$ candidates decaying to  $K^{+}K^{-}\pi^{+}$ in an event, all daughter tracks are added to apply a 1C kinematic fit constraining the mass of $D_{s}$.
+Then we select the candidate with minimum $\chi^{2}_{1C}$ as the best candidate in an event.
+We define the invariant mass of the $D_{s}$ with opposite charge to the signal $D_{s}$ as $M_{oth} = \sqrt{ (E_{cm} - \sqrt{| \vec p_{D_{s}} |^{2} + m_{D_{s}}} - E_{\gamma})^{2} - |\vec p_{cm} - \vec p_{D_{s}} - \vec p_{\gamma}| ^{2}   }$, where $E_{\gamma}$ and $\vec p_{\gamma}$ refer to the energy and momentum of gamma from the process $D_{s}^{*} \rightarrow D_{s}\gamma$.
+The good gamma with $M_{oth}$ closest to the nominal $D_{s}$  mass~\cite{PDG} is taken as the gamma from the decay $D_{s}^{*} \rightarrow D_{s}\gamma$.
+
+Multi-variable analysis (MVA) method~\cite{TMVA} is used to suppress the background.
+With the gradient boosted decision tree (BDTG) classifier provided by MVA, we train MVA separately with two sets of variables for the two categories depending on the $D_{s}^{+}$ origin.
+Two categories of events are selected in a $M_{rec} - \Delta M$ 2D plane, where $\Delta M \equiv M(D_{s}^{+}\gamma) - M(D_{s}^{+})$, $M(D_{s}^{+})$ is the invariant mass of signal $D_{s}$ and $M(D_{s}^{+}\gamma)$ refers to the invariant mass of $D_{s}$ and the gamma from $D_{s}^{*} \rightarrow D_{s}\gamma$, as shown in Fig.~\ref{2DAll}.
+
+\begin{figure}[htbp]
+ \centering
+ \mbox{
+  %\vskip -1.5cm
+  \begin{overpic}[width=0.48\textwidth]{plot/2DAll.png}
+  \end{overpic}
+ }
+ \caption{Two dimensional plane of ${M_{rec}}$ versus ${\Delta{M} \equiv M(D_{s}^{+}\gamma) - M(D_{s}^{+})}$ from the simulated ${D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}}$ decays. The red (green) dashed lines mark the mass window for the $D_{s}^{+}$ Cat.~\#0 ( Cat.~\#1) around the $M_{rec}$ ($\Delta{M}$) peak. }
+\label{2DAll}
+\end{figure}
+
+For Cat. \#0, the BDTG takes three discriminating variables as input: the recoiling mass $M_{rec}$, the total momentum of the tracks and neutrals in the rest of event (not part of the $D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$ candidate) and the energy of gamma from $D_{s}^{*}$ $E_{\gamma}$.
+We define $M_{rec}^{'}$ as $M_{rec}^{'} = \sqrt{ {(E_{cm}  - \sqrt{p_{D_{s}\gamma}^{2} + m_{D_{s}^{*}}^{2}}) }^{2} - p_{D_{s}\gamma}^{2}}$, with $p_{D_{s}\gamma}$ as the momentum of the $D_{s}\gamma$ combination, $m_{D_{s}^{*}}$ as the nominal ${D_{s}^{*}}$ mass.
+For Cat. \#1, the BDTG takes another three variables as input: $\Delta M$, $M_{rec}^{'}$ and the total number of tracks and neutrals in an event $N_{tracks}$.
+According to the studies of generic MC,  with the BDTG cut criteria, we can get a relatively pure sample (background less than 4\%) and the background ratios of Cat.\# 0 and Cat.\#1 are almost the same.
+After applying the BDTG requirement, the fit to the signal $D_{s}$ invariant mass gives the background yield in signal region ($1.95 < M(D_{s}) < 1.986$ GeV/$c^{2}$) is 735.7 $\pm$ 30.0 and the corresponding signal yield is 18590.6 $\pm$ 141.0, shown as in Fig.~\ref{MIPWA-ST}.
+In the fit, the signal shape is modeled with the MC-simulated shape convoluted with a Gaussian function and the background is described with a second-order Chebychev polynomial.
+\begin{figure}[htbp]
+ \centering
+ \mbox{
+  %\vskip -1.5cm
+  \begin{overpic}[width=0.48\textwidth]{plot/MIPWA-ST.eps}
+  \end{overpic}
+ }
+ \caption{The fit to the signal $D_{s}$ invariant mass ($M_{D_{s}}$) spectrum (the dots with error bars) after BDTG requirement, the area between the pink arrows is the signal area of the sample for MIPWA.
+     The signal shape (green line) is the MC shape convoluted with a Gaussian function and the background shape (red line) is second-order Chebychev polynomial.
+ }
+\label{MIPWA-ST}
+\end{figure}
+
+Assuming N is the number of events for a given mass interval, the angular distributions $\frac{dN}{d\cos\Theta}$ can be expanded in terms of harmonic functions:
+    \begin{equation}
+        \frac{dN}{d\cos\Theta} = 2\pi\sum_{k=0}^{L_{max}}\left\langle Y_{k}^{0}\right\rangle Y_{k}^{0}(\cos\Theta),\label{expansion}
+    \end{equation}
+    where $L_{max} = 2 \ell_{max}$, and $\ell_{max}$ is the maximum orbital angular momentum quantum number required to describe the $K^{+}K^{-}$ system at $m_{K^{+}K^{-}}$ (e.g. $\ell_{max}$ =1 for S-, P-wave description); $\Theta$ is the angle between the $K^{+}$ direction in the $K^{+}K^{-}$ rest frame and the prior direction of the $K^{+}K^{-}$ system in the $D_{s}^{+}$ rest frame, $Y_{k}^{0}(\cos\Theta) = \sqrt{(2k+1)/4\pi}P_{k}(cos\Theta)$ are harmonic functions, $P_{k}(cos\Theta)$ is $k$-th order Legendre polynomial.
+    $\frac{dN}{d\cos\Theta}$ has been efficiency corrected, phase space factor corrected and background subtracted.
+    Before the efficiency correction, we subtract the background with the shape on the distribution $m_{K^{-}\pi^{+}}$ versus $m_{K^{+}K^{-}}$ from MC. 
+    The distribution $m_{K^{-}\pi^{+}}$ versus $m_{K^{+}K^{-}}$ of MC is used to calculate the efficiency.
+    Then we correct the distributions with the efficiency and the phase space factor $1/\sqrt{ 1 - \frac{4m(K)^{2}}{m(K^{+}K^{-})^{2}}}$, where $m(K)$ is the nominal mass of $K^{+}$~\cite{PDG}.
+    $Y_{k}^{0}(cos\Theta)$ are normalized in the following formalism:
+    \begin{equation}
+        \int_{-1}^{1}Y_{k}^{0}(\cos\Theta)Y_{j}^{0}(\cos\Theta) d\cos\Theta  = \frac{\delta_{kj}}{2\pi},\label{sh-normalizations}
+    \end{equation}
+    Considering the orthogonality condition, we can obtain the expansion coefficients according to Eq.~\ref{expansion} and Eq.~\ref{expansion-coefficients}:
+    \begin{equation}
+        \left\langle Y_{k}^{0} \right\rangle = \int_{-1}^{1}Y_{k}^{0}(\cos\Theta) \frac{dN}{d\cos\Theta} d\cos\Theta. \label{expansion-coefficients}
+    \end{equation}
+    In this section, the formalism $\sum_{n=1}^{N}Y_{k}^{0}(\cos\Theta_{n})$ is used to calculate the integral, where $\Theta_{n}$ refers to the $\Theta$ of the $n$-th event.
+
+    According to $\left\langle Y_{k}^{0} \right\rangle = \sum_{n=1}^{N}Y_{k}^{0}(\cos\Theta_{n})$, we can obtain the distribution of $\left\langle Y_{k}^{0} \right\rangle$ for k = 0, 1 and 2 at the low end of $K^{+}K^{-}$ mass spectrum (0.988 $< m(K^{+}K^{-}) < $ 1.15 GeV/$c^{2}$), as shown in Fig.~\ref{Y0}.
+    \begin{figure*}[htbp]
+        \centering
+        \mbox{
+            %\vskip -1.5cm
+            \begin{overpic}[width=0.98\textwidth]{plot/Y0.eps}
+            \end{overpic}
+        }
+        \caption{ The distribution of $\left\langle Y_{k}^{0} \right\rangle$ for k = 0, 1 and $2$ in $K^{+}K^{-}$ threshold region.}
+        \label{Y0}
+    \end{figure*}
+
+    Assuming that only S- and P-wave amplitudes are necessary at the low end of $K^{+}K^{-}$ mass spectrum, we can also write the distribution  $\frac{dN}{d\cos\Theta}$ in terms of the partial wave amplitudes:
+    \begin{equation}
+        \frac{dN}{d\cos\Theta} = 2\pi\left|SY_{0}^{0}(\cos\Theta) + PY_{1}^{0}(\cos\Theta)\right|^{2},\label{SP-distribution}
+    \end{equation}
+    where S and P refer to the amplitude of S-wave and P-wave, respectively.
+    Comparing the coefficients of $Y_{k}^{0}(cos\Theta)$ in Eq.~\ref{expansion} and Eq.~\ref{SP-distribution}~\cite{PRD56-7299}, we can obtain 
+    \begin{equation}
+        \begin{array}{lr}
+            \left|S\right|^{2} = \sqrt{4\pi}\left\langle Y_{0}^{0}\right\rangle - \sqrt{5\pi}\left\langle Y_{2}^{0}\right\rangle, &\\
+            cos\phi_{SP} = \sqrt{ \frac{\pi}{ (\sqrt{4\pi}\left\langle Y_{0}^{0}\right\rangle - \sqrt{5\pi}\left\langle Y_{2}^{0}\right\rangle)\sqrt{5\pi}\left\langle Y_{2}^{0}\right\rangle  }   } \left\langle Y_{1}^{0}\right\rangle, &\\
+            \left|P\right|^{2} = \sqrt{5\pi}\left\langle Y_{2}^{0}\right\rangle, &
+        \end{array}\label{SP-RES} 
+    \end{equation}
+    where $\phi_{SP} = \phi_{S} - \phi_{P}$ is the phase different between S-wave and P-wave.
+    Calculating $\left|S\right|^{2}$ (S(980)), $\phi_{SP}$ and $\left|P\right|^{2}$ in every mass interval of $m(K^{+}K^{-}$ in the threshold region, we can get the corresponding distributions,  as shown in Fig.~\ref{SP}.
+    There are two curves in Fig.~\ref{SP}(c) because of the sign ambiguity of $\phi_{SP}$ extracted from $cos\phi_{SP}$.
+
+    \begin{figure*}[htbp]
+        \centering
+        \mbox{
+            %\vskip -1.5cm
+            \begin{overpic}[width=0.9\textwidth]{plot/SP.eps}
+            \end{overpic}
+        }
+        \caption{The distribution of $\left|S\right|^{2}$ (a), $\left|P\right|^{2}$ (b), $\phi_{SP}$ and $\phi_{S}$ in the threshold region of $m(K^{+}K^{-})$.}
+        \label{SP}
+    \end{figure*}
+
+
+    S(980) is empirically parameterized with the following formula:
+    \begin{equation}
+        A_{S(980)} = \frac{1}{m_{0}^{2} - m^{2} -im_{0}\Gamma_{0}\rho_{KK}}, \label{S980-RBW}
+    \end{equation}
+    where $\rho_{KK} = 2p/m$.
+    Fitting the distribution of $\left|S\right|^{2}$ in Fig~\ref{SP}(a) with $|A_{S(980)}|^{2}$, we can obtain the values of $m_{0}$ and $\Gamma_{0}$:
+    \begin{equation}
+        \begin{array}{lr}
+            m_{0} = (0.919 \pm 0.006_{stat}) \ {\rm GeV}/c^{2}, &\\
+            \Gamma_{0} = (0.272 \pm 0.040_{stat}) \ {\rm GeV}. &
+        \end{array}\label{S-wave parameters} 
+    \end{equation}
+    Fig.~\ref{FitSWave} shows the fit result with statistical errors only.
+    \begin{figure}[htbp]
+        \centering
+        \mbox{
+            %\vskip -1.5cm
+            \begin{overpic}[width=0.48\textwidth]{plot/Fit-SWave.eps}
+            \end{overpic}
+        }
+        \caption{ Fit of S(980) amplitudes with $|A_{S(980)}|^{2}$.}
+        \label{FitSWave}
+    \end{figure}
+
+    According to Eq.~\ref{S-wave parameters}, the S(980) central mass is much lower than the threshold of $m(K^{+}K^{-}$ (about 0.988 GeV/$c^{2}$).
+    So the distribution of $\phi_{S}$ is expected to be a flat curve decreasing slowly.
+    Then the red curve decreasing rapidly near the nominal mass of $\phi(1020)$ is chosen as the physical solution.
+    From Eq.~\ref{RBW} in Sec.~\ref{propagator}, we can get the phase of $\phi(1020)$ $\phi_{P}$.
+    Then we can obtain the phase of $S(980)$ $\phi_{S}$ by adding $\phi_{SP}$ and $\phi_{P}$, as shown in Fig~\ref{SP}(d).
+    The values of $\left|S\right|^{2}$ (arbitrary units), $\left|P\right|^{2}$ (arbitrary units) and $\phi_{S}$ in every mass interval of the threshold region are listed in Table~\ref{SP-values}.
+    \begin{table*}[htbp]
+        \caption{
+            The values of $\left|S\right|^{2}$ (arbitrary units), $\left|P\right|^{2}$ (arbitrary units) and $\phi_{S}$.
+            The values of 
+            Uncertainties in the table are statistical only.
+        }
+        \label{SP-values}
+        \begin{center}
+            \begin{tabular}{cccc}
+                %\hline\hline
+                \hline\hline
+                $m(K^{+}K^{-})$ (GeV/$c^{2}$) & $\left|S\right|^{2}$ (arbitrary units) & $\left|P\right|^{2}$ (arbitrary units) & $\phi_{S}$ (degrees)\\
+                \hline
+                %$[0.988, 0.992]$  &   14593$\ \pm\ $1860& -1137$\ \pm\ $1410  &   - \\ 
+                $[0.988,\ 0.992]$   &	14593$\ \pm\ $1860&	-1137$\ \pm\ $1401&	 - \\ 	
+                $[0.992,\ 0.996]$   &	11326$\ \pm\ $1364&	168$\ \pm\ $1027&	92$\ \pm\ $48 \\ 	
+                $[0.996,\ 1.000]$   &	11064$\ \pm\ $1143&	-531$\ \pm\ $850&	 - \\ 	
+                $[1.000,\ 1.004]$   &	8659$\ \pm\ $1015&	1006$\ \pm\ $748&	90$\ \pm\ $7 \\ 	
+                $[1.004,\ 1.008]$   &	7207$\ \pm\ $1281&	7292$\ \pm\ $1003&	80$\ \pm\ $5 \\ 	
+                $[1.008,\ 1.012]$   &	8703$\ \pm\ $1509&	11746$\ \pm\ $1200&	81$\ \pm\ $5 \\ 	
+                $[1.012,\ 1.016]$   &	6669$\ \pm\ $2565&	48763$\ \pm\ $2066&	79$\ \pm\ $8 \\ 	
+                $[1.016,\ 1.020]$   &	7051$\ \pm\ $6057&	199740$\ \pm\ $5048&	101$\ \pm\ $32 \\ 	
+                $[1.020,\ 1.024]$   &	2466$\ \pm\ $4232&	122645$\ \pm\ $3520&	96$\ \pm\ $52 \\ 	
+                $[1.024,\ 1.028]$   &	4292$\ \pm\ $2108&	34363$\ \pm\ $1748&	87$\ \pm\ $14 \\ 	
+                $[1.028,\ 1.033]$   &	4009$\ \pm\ $1455&	15046$\ \pm\ $1212&	81$\ \pm\ $13 \\ 	
+                $[1.033,\ 1.037]$   &	3922$\ \pm\ $1088&	8108$\ \pm\ $887&	78$\ \pm\ $14 \\ 	
+                $[1.037,\ 1.041]$   &	3480$\ \pm\ $944&	5945$\ \pm\ $768&	70$\ \pm\ $14 \\ 	
+                $[1.041,\ 1.045]$   &	5376$\ \pm\ $854&	3707$\ \pm\ $678&	71$\ \pm\ $14 \\ 	
+                $[1.045,\ 1.049]$   &	4043$\ \pm\ $696&	2103$\ \pm\ $551&	76$\ \pm\ $14 \\ 	
+                $[1.049,\ 1.053]$   &	3621$\ \pm\ $665&	1858$\ \pm\ $530&	76$\ \pm\ $14 \\ 	
+                $[1.053,\ 1.057]$   &	3167$\ \pm\ $599&	1680$\ \pm\ $467&	76$\ \pm\ $14 \\ 	
+                $[1.057,\ 1.061]$   &	3063$\ \pm\ $569&	1333$\ \pm\ $448&	70$\ \pm\ $15 \\ 	
+                $[1.061,\ 1.065]$   &	3841$\ \pm\ $582&	685$\ \pm\ $461&	59$\ \pm\ $17 \\ 	
+                $[1.065,\ 1.069]$   &	3343$\ \pm\ $439&	-45$\ \pm\ $324&	 - \\ 	
+                $[1.069,\ 1.073]$   &	3377$\ \pm\ $525&	395$\ \pm\ $413&	59$\ \pm\ $21 \\ 	
+                $[1.073,\ 1.077]$   &	2635$\ \pm\ $474&	684$\ \pm\ $368&	71$\ \pm\ $15 \\ 	
+                $[1.077,\ 1.081]$   &	2632$\ \pm\ $426&	357$\ \pm\ $320&	64$\ \pm\ $18 \\ 	
+                $[1.081,\ 1.085]$   &	2802$\ \pm\ $485&	647$\ \pm\ $377&	63$\ \pm\ $16 \\ 	
+                $[1.085,\ 1.089]$   &	2121$\ \pm\ $421&	287$\ \pm\ $332&	74$\ \pm\ $18 \\ 	
+                $[1.089,\ 1.093]$   &	2487$\ \pm\ $369&	-185$\ \pm\ $278&	 - \\ 	
+                $[1.093,\ 1.097]$   &	2105$\ \pm\ $505&	1041$\ \pm\ $409&	68$\ \pm\ $15 \\ 	
+                $[1.097,\ 1.101]$   &	2326$\ \pm\ $440&	100$\ \pm\ $355&	51$\ \pm\ $66 \\ 	
+                $[1.101,\ 1.105]$   &	1962$\ \pm\ $369&	47$\ \pm\ $286&	44$\ \pm\ $137 \\ 	
+                $[1.105,\ 1.109]$   &	1422$\ \pm\ $323&	216$\ \pm\ $246&	65$\ \pm\ $21 \\ 	
+                $[1.109,\ 1.114]$   &	1420$\ \pm\ $453&	777$\ \pm\ $377&	63$\ \pm\ $17 \\ 	
+                $[1.114,\ 1.118]$   &	697$\ \pm\ $377&	903$\ \pm\ $307&	73$\ \pm\ $17 \\ 	
+                $[1.118,\ 1.122]$   &	1351$\ \pm\ $330&	234$\ \pm\ $257&	65$\ \pm\ $21 \\ 	
+                $[1.122,\ 1.126]$   &	1373$\ \pm\ $297&	-60$\ \pm\ $229&	 - \\ 	
+                $[1.126,\ 1.130]$   &	690$\ \pm\ $312&	340$\ \pm\ $255&	59$\ \pm\ $22 \\ 	
+                $[1.130,\ 1.134]$   &	535$\ \pm\ $246&	130$\ \pm\ $197&	67$\ \pm\ $27 \\ 	
+                $[1.134,\ 1.138]$   &	772$\ \pm\ $261&	205$\ \pm\ $199&	38$\ \pm\ $37 \\ 	
+                $[1.138,\ 1.142]$   &	1246$\ \pm\ $266&	-71$\ \pm\ $200&	 - \\ 	
+                $[1.142,\ 1.146]$   &	545$\ \pm\ $350&	456$\ \pm\ $298&	35$\ \pm\ $37 \\ 	
+                $[1.146,\ 1.150]$   &	763$\ \pm\ $262&	206$\ \pm\ $205&	58$\ \pm\ $24 \\ 	
+                %\hline\hline
+                \hline\hline
+            \end{tabular}
+        \end{center}
+    \end{table*}
+
+
+    Systematic uncertainties in this section taken in account:
+    \begin{itemize}
+        \item \uppercase\expandafter{\romannumeral1} Data-MC agreement for the BDTG output. 
+            We apply the same BDTG as that in this section
+            %Sec.~\ref{MIPWA-BA} 
+            to a control sample, 
+            which passed the same event selection without the kinematic fit $\chi_{5c}^{2}$ cut criteria as that in  
+            Sec.~\ref{DT-AA}, 
+            and compare the efficiency of data and MC.
+            The efficiency of data (MC) is defined as $e_{data} = \frac{N_{d0}}{N_{d1}}$ ($e_{MC} = \frac{N_{M0}}{N_{M1}}$), where $N_{d0}$ ($N_{M0}$) and $N_{d1}$ ($N_{M1}$) are the number of events before and after applying the BDTG cut criteria.
+            The comparison of efficiencies between data and MC is listed in Table~\ref{BDTG-SYS}.
+            \begin{table*}[htbp]
+                \caption{The comparison of efficiencies between data and MC.}
+                \label{BDTG-SYS}
+                \begin{center}
+                    \begin{tabular}{cccc}
+                        %\hline\hline
+                        \hline\hline
+                        $m_{K^{+}K^{-}}$ (GeV/$c^{2}$) &  $e_{data} $ &  $e_{MC}$&  $e_{data} / e_{MC}$   \\
+                        \hline
+                        $[0.988, 1.014]$ &                0.3134\ $\pm$\ 0.0273 & 0.3069\ $\pm$\ 0.0062 & 1.0210\ $\pm$\ 0.0914 \\  
+                        $[1.014, 1.018]$ &                0.3199\ $\pm$\ 0.0278 & 0.3641\ $\pm$\ 0.0068 & 0.8787\ $\pm$\ 0.0781 \\
+                        $[1.018, 1.019]$ &                0.3968\ $\pm$\ 0.0357 & 0.4059\ $\pm$\ 0.0080 & 0.9775\ $\pm$\ 0.0900 \\
+                        $[1.019, 1.021]$ &                0.3631\ $\pm$\ 0.0320 & 0.3970\ $\pm$\ 0.0083 & 0.9146\ $\pm$\ 0.0830 \\
+                        $[1.021, 1.023]$ &                0.3704\ $\pm$\ 0.0330 & 0.3834\ $\pm$\ 0.0075 & 0.9662\ $\pm$\ 0.0881 \\
+                        $[1.023, 1.029]$ &                0.3028\ $\pm$\ 0.0261 & 0.3190\ $\pm$\ 0.0064 & 0.9491\ $\pm$\ 0.0840 \\
+                        $[1.029, 1.061]$ &                0.2932\ $\pm$\ 0.0254 & 0.2962\ $\pm$\ 0.0059 & 0.9900\ $\pm$\ 0.0878 \\
+                        $[1.061, 1.150]$ &                0.2440\ $\pm$\ 0.0201 & 0.2502\ $\pm$\ 0.0049 & 0.9750\ $\pm$\ 0.0829 \\
+                        %\hline\hline
+                        \hline\hline
+                    \end{tabular}
+                \end{center}
+            \end{table*}
+            We fit the shape of S(980) corrected with $\frac{e_{data}}{e_{MC}}$ and take the shift of $m_{0}$ and $\Gamma_{0}$ as the systematic uncertainty. The shift of $m_{0}$ and $\Gamma_{0}$ are 0.03 GeV/$c^{2}$ and 0.02 GeV, respectively.
+
+        \item \uppercase\expandafter{\romannumeral2} Background subtraction. 
+            We change the bin number and fit range and replace the background shape with a third-order Chebychev polynomial in the fit shown in Fig~\ref{MIPWA-ST} and take the shift as a resource of background ratio error.
+            We vary the background ratio ( (3.8 $\pm$ 0.3)\% ) with one sigma and then take the largest shift of the fit of S(980) as the systematic uncertainty related to the background ratio. 
+            %The shift of mass and width are 0.002 GeV/$c^{2}$ and 0.001 GeV/$c^{2}$, respectively.
+            The background shape of generic MC is also replaced with that of ``Sideband" for data to perform a fit and the shift is taken as the systematic uncertainty related to the background shape.
+            The shift of $m_{0}$ and $\Gamma_{0}$ are 0.002 GeV/$c^{2}$ and 0.001 GeV.
+
+        \item \uppercase\expandafter{\romannumeral3} Particle identification (PID) and tracking efficiency difference between data and MC. 
+            To estimate the experimental effects related to the difference of PID and tracking efficiency between data and MC, based on the work~\cite{PID} and the work~\cite{Tracking}, we weight each event with the efficiency of data divided by that of MC and fit the shape of S(980).
+            The shift of $m_{0}$ and $\Gamma_{0}$ are 0.001 GeV/$c^{2}$ and 0.013 GeV.
+
+        \item \uppercase\expandafter{\romannumeral4} The $f_{0}(1370)$ remained in S(980). 
+            We assume that the fit fraction (defined in Sec.~\ref{FF}) of $D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$ is 5\% and then produced a MC sample with procedure $D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$ to extract the shape of $f_{0}(1370)$ at the low end of $m_{K^{+}K^{-}}$ mass spectrum.
+            We scale the number of $D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$ according to the fit fraction of $D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$ and the shape contributed from $f_{0}(1370)$ is shown in Fig.~\ref{f01370_SWave}.
+            At last, the $f_{0}(1370)$ remained in S(980) is subtracted according to the scaled shape obtained above.
+            The shift of $m_{0}$ and $\Gamma_{0}$ are 0.001 GeV/$c^{2}$ and 0.003 GeV.
+
+            \begin{figure}[htbp]
+                \centering
+                \mbox{
+                    %\vskip -1.5cm
+                    \begin{overpic}[width=0.48\textwidth]{plot/f01370_SWave.eps}
+                    \end{overpic}
+                }
+                \caption{The shape of $f_{0}(1370)$ at the low end of $m_{K^{+}K^{-}}$ mass spectrum extracted from a MC sample with procedure $D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$.}
+                \label{f01370_SWave}
+            \end{figure}
+
+        \item \uppercase\expandafter{\romannumeral5} Fit range. We vary the fit range from [0.988, 1.15] GeV/$c^{2}$ to [0.988, 1.145] GeV/$c^{2}$ and the shift of $m_{0}$ and $\Gamma_{0}$ are 0.002 GeV/$c^{2}$ and 0.003 GeV.  
+    
+    \end{itemize}
+    
+    All of the systematic uncertainties mentioned above are summarized in Table~\ref{MIPWA-Sys}.
+    \begin{table}[htbp]
+        \caption{Systematic uncertainties of partial wave analysis in the low $K^{+}K^{-}$ mass region.}
+        \label{MIPWA-Sys}
+        \begin{center}
+            \begin{tabular}{cccc}
+                %\hline\hline
+                \hline\hline
+                Source   &                                                      $m_{0}$ ( GeV/$c^{2}$)  &$\Gamma_{0}$ ( GeV)\\
+                \hline
+                BDTG                     & 0.030                  &   0.020 \\
+                Background subtraction   & 0.002                  &   0.001 \\
+                PID and Tracking         & 0.001                  &   0.013 \\
+                $f_{0}(1370)$            & 0.001                  &   0.003 \\
+                Fit range                & 0.002                  &   0.003 \\
+
+                \hline
+                total                                   & 0.030                  &   0.024\\
+                %\hline\hline
+                \hline\hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+    We obtain the result of $m_{0}$ and $\Gamma_{0}$ with statistical and systematic errors to be:
+    \begin{equation}
+        \begin{array}{lr}
+            m_{0} = (0.919 \pm 0.006_{stat} \pm 0.030_{sys}) \ {\rm GeV}/c^{2}, &\\
+            \Gamma_{0} = (0.272 \pm 0.040_{stat} \pm 0.024_{sys})\ {\rm GeV}, &
+        \end{array}\label{S-wave-sys} 
+    \end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------
+\section{Amplitude Analysis}
+\label{AA}
+
+An unbinned maximum likelihood method is used to determine the intermediate resonance composition in the decay $D_{s} \rightarrow K^{+}K^{-}\pi^{+}$.
+The likelihood function is constructed with the probability density function (PDF), in which the momenta of the three daughter particles are used as inputs.
+
+\subsection{double tag method in amplitude analysis}
+\label{DT-AA}
+As $D_{s}$ mesons should be produced in pairs, $D_{s}$ mesons can be reconstructed with double tag (DT) method.
+In the single tag (ST) sample, only one $D_{s}^{+}$ or $D_{s}^{-}$ meson is reconstructed through chosen $D_{s}$ decays, which are so called tag modes.
+Eight tag modes used in the amplitude analysis and Sec.~\ref{BF} are  
+$D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}$, $D_{s}^{-} \rightarrow K_{S}^{0}K^{-}$, $D_{s}^{-} \rightarrow K_{S}^{0}K^{-}\pi^{+}\pi^{-}$, $D_{s}^{-} \rightarrow K^{-}\pi^{+}\pi^{-}$, $D_{s}^{-} \rightarrow K_{S}^{0}K^{+}\pi^{-}\pi^{-}$, $D_{s}^{-} \rightarrow \pi^{+}\pi^{-}\pi^{-}$, $D_{s}^{-} \rightarrow \eta^{'}_{\pi^{+}\pi^{-}\eta_{\gamma\gamma}}$, $D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}\pi^{0}$.
+However, in the DT sample, both tagged $D_{s}^{-}$ and signal $D_{s}^{+}$ are reconstructed.
+After $K^{\pm}$, $K_{S}^{0}$, $\eta$, $\eta^{'}$ and $\pi^{0}$ are identified in Sec.~\ref{chap:event_selection}, with the tagged $D_{s}^{-}$ meson, the signal $D_{s}^{+}$ can be reconstructed with the DT method.
+A five-constraint (5C) kinematic fit, in which four-momentum of $D_{s}D_{s}^{*}$ is constrained to the initial four-momentum and the invariant mass of $D_{s}^{*}$ is constrained to the corresponding PDG values~\cite{PDG}, is performed to ensure that all events fall within Dalitz plot. 
+If the combination of signal $D_{s}$ and extra $\gamma$, which is used to reconstruct neither signal $D_{s}^{+}$ nor $D_{s}^{-}$, to form $D_{s}^{*}$ have a lower $\chi_{5C}^{2}$ than that of tagged $D_{s}$ and $\gamma$, the signal $D_{s}$ should come from the $D_{s}^{*}$ decay.
+Otherwise, the signal $D_{s}$ should directly come from the intersection point.
+If there are duplicate candidates of $D_{s}^{*}D_{s}$ pairs in an event, the candidate with minimum $\chi_{5C}^{2}$ is selected as the best candidate.
+The candidates satisfy
+\begin{itemize}
+    \item[-] $m_{sig}$ and $m_{tag}$ falls in the mass regions shown in Table~\ref{ST-mass-window}, 
+	\item[-] $\chi_{5C}^{2} < 200 $, 
+\end{itemize}
+are retained for the amplitude analysis, where $m_{sig}$ and $m_{tag}$ refer to mass of $D_{s}$ at signal side and tag side respectively.
+
+\begin{table}[htbp]
+    \caption{ The mass windows for each tag mode. The mass windows use the results in Ref.~\cite{Doc-DB-630-v35} }
+    \label{ST-mass-window}
+    \begin{center}
+        \begin{tabular}{cc}
+            %\hline\hline
+            \hline\hline
+            Tag mode & Mass window (GeV/$c^{2}$)  \\
+            \hline
+            $D_{s}^{-} \rightarrow K_{S}^{0}K^{-}$                          & [1.948, 1.991]    \\
+            $D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}$                       & [1.950, 1.986]    \\
+            $D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}\pi^{0}$                & [1.947, 1.982]    \\
+            $D_{s}^{-} \rightarrow K_{S}^{0}K^{-}\pi^{+}\pi^{-}$            & [1.958, 1.980]    \\
+            $D_{s}^{-} \rightarrow K_{S}^{0}K^{+}\pi^{-}\pi^{-}$            & [1.953, 1.983]    \\
+            $D_{s}^{-} \rightarrow \pi^{-}\pi^{-}\pi^{+}$                   & [1.952, 1.984]    \\
+            $D_{s}^{-} \rightarrow \pi^{-}\eta_{\pi^{+}\pi^{-}\eta_{\gamma\gamma}}^{'}$  & [1.940, 1.996]        \\
+            $D_{s}^{-} \rightarrow K^{-}\pi^{+}\pi^{-}$                     & [1.953, 1.983]    \\
+            \hline\hline
+            %\hline\hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+In addition, we use the four-momentum after applying kinematic fitting with the mass of signal $D_{s}$ constrained to PDG value and the five constrains above to perform amplitude analysis.
+
+The background of the DT sample in the amplitude analysis is estimated with the generic MC.
+There is no obvious peaking background in the signal region (1.950  $ < m_{sig} < $1.986 GeV/$c^{2}$) and 4381 signal candidates with a purity of 99.6\% are obtained with all selection criteria applied.
+
+
+\subsection{Likelihood Function Construction}
+\label{likelihood}
+As this decay is a three-body process, the amplitude $A_{n}(p)$ for the $n^{\rm{th}}$ amplitude mode is given by
+\begin{equation}
+    A_{n}(p) = P_{n}(p)S_{n}(p)F_{n}^{r}(p)F_{n}^{D}(p), \label{base-amplitude}
+\end{equation}
+where $p$ refers to the set of the three daughter particles' four-momenta, $P_{n}(P)$ is the propagator, $S_{n}(p)$ is the spin factor constructed with the covariant tensor formalism~\cite{covariant-tensors}, 
+$F_{n}^{r}(p)$ and $F_{n}^{D}(p)$ are the Blatt-Weisskopf barrier factor for the intermediate resonance and $D_{s}$ meson, respectively.
+According to the isobar formulation, the total amplitude $M(p)$ is obtained by the coherent sum of all intermediate modes:
+\begin{equation}
+M(p)=\begin{matrix}\sum c_{n}A_{n}(p)\end{matrix}, \label{coherent-sum}
+\end{equation}
+where $c_{n} = \rho_{n}e^{i\phi}$ is the complex coefficient of the $n^{\rm{th}}$ mode, $\rho_{n}$ and $\phi_{n}$ are the magnitude and phase of $c_{n}$, respectively.
+Then The signal PDF $f_{S}(p)$ is presented as: 
+\begin{equation}
+    f_{S}(p) = \frac{\epsilon(p)\left|M(p)\right|^{2}R_{3}(p)}{\int \epsilon(p)\left|M(p)\right|^{2}R_{3}(p)\,dp}, \label{signal-PDF}
+\end{equation}
+where $\epsilon(p)$ is the detection efficiency and $R_{s}(p)$ indicates the three-particle phase space, which is defined as:
+\begin{equation}
+    R_{3}(p)dp = (2\pi)^{4}\delta^{4}
+    (p_{D_{s}} - \sum_{\alpha=1}^{3}p_{\alpha})
+    \prod_{\alpha=1}^{3}\frac{d^{3}p_{\alpha}}{ (2\pi)^{3}2E_{\alpha}}, \label{three-body PHSP}
+\end{equation}
+where $\alpha = 1, 2, 3$ is the index of the three daughter particles.
+Considering the background ratio is only 0.4\%,  the likelihood function is given by
+\begin{equation}
+    \begin{aligned}    
+    \ln{\mathcal{L}}&= \begin{matrix}\sum_{k}^{N_{data}} \ln f_{S}(p^{k})\end{matrix}   \\
+                    &= \sum_{k}^{N_{data}}\ln \left( \frac{\left|M(p)\right|^{2}}{\int \epsilon(p)\left|M(p)\right|^{2}R_{3}(p)\,dp}    \right)  \\
+                    &+\sum_{k}^{N_{data}}\ln \left( R_{3}(p)\epsilon(p) \right)
+    \end{aligned},
+    \label{likelihood}
+\end{equation}
+where $N_{data}$ is the number of candidate events in data.
+The normalization integral in Eq.~\ref{likelihood} is firstly determined by the following equation using a phase-space MC sample with a uniform distribution:
+\begin{equation}
+    \begin{aligned}
+        &\int \epsilon(p)\left|M(p)\right|^{2}R_{3}(p)\,dp \\ 
+        &\approx \frac{1}{N_{MC,gen}} \begin{matrix}\sum_{k_{MC}}^{N_{MC,sel}} \left|M(p^{k_{MC}})\right|^{2}\end{matrix},
+    \end{aligned}
+    \label{MC-intergral}
+\end{equation}
+where $p^{k_{MC}}$ is the $k_{MC}^{\rm th}$ MC event's set of four-momenta.
+Here, $N_{MC,gen}$ and $N_{MC,sel}$ are the numbers of generated phase-space events and selected phase-space events, respectively.
+A set of estimated $c_{n}$ can be obtained using the phase-space MC to perform the normalization integral.
+Assuming the estimated values to be $c_{n}^{'}$, we can perform the normalization integral with signal MC samples:
+\begin{equation}
+    \begin{aligned}
+        &\int \epsilon(p)\left|M(p)\right|^{2}R_{3}(p)\,dp \\ 
+        &\approx \frac{1}{N_{MC}} \sum_{k_{MC}}^{N_{MC}} \frac{\left|M(p^{k_{MC}})\right|^{2}} { \left|M^{gen}(p^{k_{MC}})\right|^{2} }, 
+    \end{aligned}
+\label{sig-MC-intergral}
+\end{equation}
+where $M^{gen}(p^{k_{MC}})$ is the PDF modeled with $c_{n}^{'}$ to generate signal MC and $N_{MC}$ is the number of the signal MC sample.
+$\gamma_{\epsilon}$ is introduced to correct the bias caused by PID and tracking efficiency inconsistencies between data and MC:
+\begin{equation}
+    \gamma_{\epsilon} = \prod_{j} \frac{\epsilon_{j, data}(p)}{\epsilon_{j, MC}(p)}, \label{experimental-effect}
+\end{equation}
+where $\epsilon_{j, data}$ and $\epsilon_{j, MC}$ refer to the PID or tracking efficiencies modeled with $p$ for data and MC, respectively.
+Taking the correction factors $\gamma_{\epsilon}$ in account, then the normalization integral can be obtained by:
+
+\begin{equation}
+    \begin{aligned}
+        &\int \epsilon(p)\left|M(p)\right|^{2}R_{3}(p)\,dp \\ 
+        &\approx \frac{1}{N_{MC}} \sum_{k_{MC}}^{N_{MC}} \frac{\left|M(p^{k_{MC}})\right|^{2}\gamma_{\epsilon}} { \left|M^{gen}(p^{k_{MC}})\right|^{2} }. 
+    \end{aligned}
+\label{sig-MC-intergral-correction}
+\end{equation}
+
+
+
+\subsubsection{Propagator and Blatt-Weisskopf barrier}
+\label{propagator}
+For a given two-body decay $a \rightarrow bc$,  $p_{a}$, $p_{b}$ and $p_{c}$ are denoted to the momenta of particles a, b and c.
+$s_{a}$, $s_{b}$ and $s_{c}$ refer to the squared invariant mass of particles a, b and c.
+$r_{a} = p_{a} - p_{c}$ is the momentum difference between a and b.
+q is defined as the magnitude of the momentum of b or c in the rest system of a:
+\begin{equation}
+    q=\sqrt{ \frac{(s_{a} + s_{b} + s_{c})^{2}}{4s_{a}} - s_{b}}. \label{base-q}
+\end{equation}
+The intermediate resonances $K^{*}(892)^{0}$, $f_{0}(1710)$, $f_{0}(1370)$ and $\phi(1020)$ are parameterized as a relativistic Breit-Wigner (RBW) formula,
+\begin{equation}
+    \begin{array}{lr}
+        P = \frac{1}{(m_{0}^{2} - s_{a} ) - im_{0}\Gamma(m)}, &\\
+        \Gamma(m) = \Gamma_{0}\left(\frac{q}{q_{0}}\right)^{2L+1}\left(\frac{m_{0}}{m}\right)\left(\frac{X_{L}(q)}{X_{L}(q_{0})}\right)^{2}, &
+    \end{array}\label{RBW} 
+\end{equation}
+where $m_{0}$ and $\Gamma_{0}$ are the mass and the width of the intermediate resonances, and are fixed to the PDG values~\cite{PDG} except the mass and the width of $f_{0}(1370)$. 
+The mass and width of $f_{0}(1370)$ are fixed to 1350 MeV$/c^{2}$ and 265 MeV$/c^{2}$~\cite{para-f01370}, respectively..
+The value of $q_{0}$ in Eq.~\ref{RBW} is that of $q$ when $s_{a}=m_{0}^{2}$, $L$ denotes the angular momenta and $X_{L}(q)$ is defined as:
+\begin{equation}
+    \begin{array}{lr}
+        X_{L=0}(q) = 1,       &\\
+        X_{L=1}(q) = \sqrt{\frac{2}{z^{2}+1}},       &\\
+        X_{L=2}(q) = \sqrt{\frac{13}{9z^{4}+3z^{2}+1}},       &\\
+    \end{array}\label{XLQ} 
+\end{equation}
+where $z=qR$.
+Only the intermediate resonances with angular momenta less than three are retained as the limit of phase space. 
+The R is the effective radius of the intermediate resonance or $D_{s}$ meson.
+The values of R are fixed to $3.0\ {\rm GeV}^{-1}$ for intermediate states and $5.0\ {\rm GeV}^{-1}$  for $D_{s}$ meson~\cite{Doc-DB-416-v30}, respectively.
+The values of R will be varied to obtain the corresponding systematic uncertainty.
+
+$K^{*}_{0}(1430)^{0}$ is parameterized with Flatte formula:
+\begin{equation}
+    P_{K^{*}_{0}(1430)^{0}}= \frac{1}{M^{2} - s - i(g_{1}\rho_{K\pi}(s) + g_{2}\rho_{\eta^{'}K}(s))}, \label{Flatte}
+\end{equation}
+where $s$ is the squared $K^{-}\pi^{+}$ invariant mass,  $\rho_{K\pi}(s)$ and $\rho_{\eta^{'}K}(s)$ are Lorentz invariant PHSP factor, and   $g_{1,2}$ are coupling constants to the corresponding final state. 
+The parameters of $K^{*}_{0}(1430)^{0}$ are fixed to values measured by CLEO~\cite{CLEO-Flatte}. 
+
+For resonance S(980) ($f_{0}(980)$ and $a_{0}(980)$), 
+we use Eq.~\ref{S980-RBW} to describe the propagator 
+and the values of parameters are fixed to the values in Eq.~\ref{S-wave parameters} 
+obtained from the model independent partial wave analysis section (Sec.~\ref{AA}).
+
+
+The Blatt-Weisskopf barriers are given by 
+\begin{equation}
+    F_{L}(q) = z^{L}X_{L}(q). 
+    \label{Blatt-Weisskopf barrier} 
+\end{equation}
+
+
+\subsubsection{Spin Factors}
+\label{spin-factor}
+The spin projection operators~\cite{covariant-tensors} for a two-body decay are defined as
+\begin{eqnarray}                                                                                                                                                                              
+    \begin{aligned}
+        P^{0}(a) &= 1, &\\
+        P^{(1)}_{\mu\mu^{'}}(a) &= -g_{\mu\mu^{'}}+\frac{p_{a,\mu}p_{a,\mu^{'}}}{p_{a}^{2}}, &\\
+        P^{(2)}_{\mu\nu\mu^{'}\nu^{'}}(a) &= \frac{1}{2}(P^{(1)}_{\mu\mu^{'}}(a)P^{(1)}_{\nu\nu^{'}}(a)+P^{(1)}_{\mu\nu^{'}}(a)P^{(1)}_{\nu\mu^{'}}(a)) & &\\
+                                          &+\frac{1}{3}P^{(1)}_{\mu\nu}(a)P^{(1)}_{\mu^{'}\nu^{'}}(a).            &
+    \end{aligned}
+    \label{spin-projection-operators} 
+\end{eqnarray}
+The corresponding covariant tensors are written in the following formalism
+\begin{equation}
+    \begin{array}{lr}
+        \tilde{t}^{(0)}(a) = 1, &\\
+        \tilde{t}^{(1)}_{\mu}(a) = -P^{(1)}_{\mu\mu^{'}}(a)r^{\mu^{'}}_{a}, &\\
+        \tilde{t}^{(2)}_{\mu\nu}(a) = P^{(2)}_{\mu\nu\mu^{'}\nu^{'}}(a)r^{\mu{'}}_{a}r^{\nu^{'}}_{a}. &\\
+    \end{array}\label{covariant-tensors} 
+\end{equation}
+The spin factor for the process $D_{s} \rightarrow aX$ (X refers to the daughter particle directly decayed from $D_{s}$ meson) with $a \rightarrow bc$ is, 
+\begin{equation}
+    \begin{array}{lr}
+        S_{n} = 1, &\\
+        S_{n} = \tilde{T}^{(1)\mu}(D_{s})\tilde{t}^{(1)}_{\mu}(a), &\\
+        S_{n} = \tilde{T}^{(2)\mu\nu}(D_{s})\tilde{t}^{(2)}_{\mu\nu}(a), &
+    \end{array}\label{spin-factor} 
+\end{equation}
+where $\tilde{T}^{(L)}_\mu(D_{s})$ and $\tilde{t}^{(L)}_\mu(a)$ are the covariant tensors with angular momenta $L$ for $D_{s} \rightarrow aX$ and $ a \rightarrow bc$, respectively.
+
+\subsection{Fit Fraction}
+\label{FF}
+With the fit result of $c_{n}$, the fit fraction (FF) is calculated with a phase-space MC at the generator level
+\begin{equation}
+FF(n) = \frac{\begin{matrix}\sum_{k=1}^{N_{MC,gen}} \left|c_{n}A_{n}\right|^{2}\end{matrix}}{\begin{matrix}\sum_{k=1}^{N_{MC,gen}} \left|M(p_{j}^{k})\right|^{2}\end{matrix}}, \label{Fit-Fraction-Definition}
+\end{equation}
+where $N_{MC,gen} = 2000000$, is the number of the PHSP MC events at generator level. 
+
+We randomly vary the coefficients $c_{n}$ according to the corresponding error matrix and then we can obtain a series of FFs for  each intermediate process.
+A Gaussian function is used to fit the distribution for each intermediate process and we take the width of the Gaussian function as the corresponding statistical uncertainty of FF. 
+In this analysis, the coefficients are varied 2000 times to obtain the statistical uncertainties of FFs.
+
+\subsection{Fit Result}
+\label{AA-FitResult}
+Figure~\ref{dalitz} shows the Dalitz plot of $m^{2}(K^{+}K^{-})$ versus $m^{2}(K^{-}\pi^{+})$.
+A clear peak of $K^{*}(892)^{0}$ and $\phi(1020)$ can be seen in the plot.
+We choose $K^{*}(892)^{0}$ as the reference and 
+the magnitude  $\rho_{n}$ and  phase $\phi_{n}$ for $D_{s}^{+} \rightarrow K^{*}(892)^{0}K^{+}$ are fixed to 1.0 and 0.0, respectively.
+The magnitude and phase of other processes are floated in the fit.
+Other possible processes are added one by one into the fit according to their statistical significances.
+We calculate the statistical significance for a certain intermediate process using the likelihood shift $\Delta \ln \mathcal{L}$ with or without the process.
+Only the processes each with a statistical significance less than $5\sigma$ are discarded.
+The six intermediate processes retained in the nominal fit are  
+$D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$,
+$D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$,
+$D_{s}^{+} \rightarrow S(980)\pi^{+}$,
+%$D_{s}^{+} \rightarrow f_{0}(980)\pi^{+}/a_{0}(980)\pi^{+}$,
+$D_{s}^{+} \rightarrow \bar{K}^{*}_{0}(1430)^{0}K^{+}$,
+$D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$ and
+$D_{s}^{+} \rightarrow f_{0}(1710)\pi^{+}$. 
+
+\begin{figure}[htbp]
+    \centering
+    \mbox{
+        \begin{overpic}[width=0.48\textwidth]{plot/dalitz.eps}
+        \end{overpic}
+    }
+    \caption{ The Dalitz plot of $m^{2}(K^{-}\pi^{+})$ versus $m^{2}(K^{+}K^{-})$ after event selection.}
+    \label{dalitz}
+\end{figure}
+
+Signal MC samples modeled with the fit result of the nominal fit, called AA signal MC samples, are generated to compare the projections of the Dalitz plots and calculate the fit bias, which will be discussed in Sec.~\ref{AA-sys}.
+The Dalitz plot projections are shown in Fig.~\ref{dalitz-projection}.
+\begin{figure*}[htbp]
+    \centering
+    \mbox{
+        \begin{overpic}[width=0.8\textwidth]{plot/dalitz-projection.eps}
+        \end{overpic}
+    }
+    \caption{$D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$: Dalitz plot projections from the nominal fit. The data are represented by points with error bars and the solid lines indicate the AA signal MC sample.}
+    \label{dalitz-projection}
+\end{figure*}
+Calculating the $\chi_{2}$ of the fit using an adaptive binning of the Dalitz plot, in which each bin has at 10 events, of $m^{2}(K^{+}K^{-})$ versus $m^{2}(K^{-}\pi^{+}$ gives the goodness of fit, the value of which is $\chi^{2}/NDOF = 290.0/280$ 
+
+
+We also compare the shape of S wave extracted from data in Fig.~\ref{SP} (Sec.~\ref{MIPWA}) 
+and the projection of S wave ( S(980), $\bar{K}^{*}_{0}(1430)^{0}$,  $f_{0}(1710)$ and $f_{0}(1370)$) to $m(K^{+}K^{-})$ in the nominal fit, shown in Fig.~\ref{MIPWA-PWA}.
+We can see that the two shapes are well consistent and the other wave components' (except S(980)) contribution is very small.
+\begin{figure}[htbp]
+    \centering
+    \mbox{
+        \begin{overpic}[width=0.45\textwidth]{plot/MIPWA_PWA.eps}
+        \end{overpic}
+    }
+    \caption{The comparison of S wave extracted from data in Fig.~\ref{SP} (Sec.~\ref{MIPWA}) and the projection of S wave ( S(980), $\bar{K}^{*}_{0}(1430)^{0}$,  $f_{0}(1710)$ and $f_{0}(1370)$) to $m(K^{+}K^{-})$ in the nominal fit. 
+    The black dots with error bars refer to data, the purple line refers to the projection of the other S wave components except S(980) and the red line refers to the projection of S wave.}
+    \label{MIPWA-PWA}
+\end{figure}
+
+\subsection{Systematic Uncertainty}
+\label{AA-sys}
+The following categories of systematic uncertainties for the amplitude analysis are studied:
+
+\begin{itemize}
+    \item \uppercase\expandafter{\romannumeral1} Propagator parameterizations of the resonances. 
+        The masses and widths of resonances are varied within one $\sigma$ error.
+        \begin{itemize}
+            \item For $S(980)$, $m_{0}$ and $\Gamma_{0}$ are shifted within errors from Eq.~\ref{S-wave-sys} in Sec.~\ref{MIPWA}.
+                %\item For $f_{0}(980) /a_{0}(980)$, the mass and width are shifted within errors from Eq.~\ref{S-wave parameters} in Sec.~\ref{MIPWA-RES}.
+            \item For $f_{0}(1370)$, the mass and width are shifted within errors from Ref.~\cite{para-f01370}.
+            \item For $\bar{K}^{*}_{0}(1430)^{0}$, the parameters are shifted within errors from Ref.~\cite{CLEO-Flatte}.
+            \item For other states, uncertainties are taken from PDG~\cite{PDG}.
+        \end{itemize}
+    \item \uppercase\expandafter{\romannumeral2} The systematic uncertainties related to the effective radius of Blatt-Weisskopf Barrier (R). The effective radius of Blatt-Weisskopf Barrier is varied within the range $\left[1.0, 5.0\right] \ {\rm GeV}^{-1}$ for intermediate resonances and  $\left[3.0, 7.0\right] \ {\rm GeV}^{-1}$ for $D_{s}$ mesons. 
+    \item \uppercase\expandafter{\romannumeral3} Fit bias. 
+        Pull distribution checks using 300 AA signal MC samples are performed to obtain the fit bias. 
+        Here the pull value PULL for a certain parameter $x$ is defined as PULL $= (x_{data} - x_{MC})/\sigma_{x_{MC}}$,
+        where $x_{MC}$ and $\sigma_{x_{MC}}$ are the value and the statical error of $x$ obtained from the fit to a certain AA signal MC sample and $x_{data}$ refers to the value of $x$ in the nominal fit.
+        The AA signal MC samples are generated each with the same size of the data. 
+        A Gaussian function is used to fit each pull distribution.
+        The quadrature sum of the mean value and the error of mean in the pull distribution fit is taken as the corresponding systematic uncertainty in unit of the corresponding statistical error.
+        %Table~\ref{pull-distribution-check} shows the fit to each pull distribution.
+        %The corresponding plots are shown in Fig.~\ref{pull-phase}, Fig.~\ref{pull-magnitude} and Fig.~\ref{pull-FF}.
+        %The quadrature sum of the value of the mean and the error of mean is considered as the uncertainty associated with fit bias.
+    \item \uppercase\expandafter{\romannumeral4} Experimental effects. 
+        The experimental effects are related to the acceptance difference between MC and data caused by PID and tracking efficiencies, that is $\gamma_{\epsilon}$ in Eq.~\ref{experimental-effect}.
+        The uncertainties caused by $\gamma_{\epsilon}$ is obtained by performing alternative amplitude analyses varying PID and tracking efficiencies according to their uncertainties according to the work~\cite{PID} and the work~\cite{Tracking}.
+    \item \uppercase\expandafter{\romannumeral5} Model assumptions. 
+        We replace Eq.~\ref{Flatte} with LASS model~\cite{LASS}.
+        %We replace Eq.~\ref{S-wave-sys} with Eq.~\ref{S-wave2} for S(980) and Eq.~\ref{Flatte} with LASS model~\cite{LASS}.
+        And then take the shift of parameters as the uncertainties.
+\end{itemize}
+
+All of the systematic uncertainties of the magnitudes, phases and FFs are listed in Table~\ref{systematic-uncertainties}.
+
+    \begin{table*}[tp]  
+        \centering  
+        \caption{Systematic uncertainties on the $\phi$ and FFs for different amplitudes in units of the corresponding statistical uncertainties.}  
+        \label{systematic-uncertainties}  
+        \begin{tabular}{cccccccc} 
+            \hline\hline
+            \multirow{2}{*}{Amplitude }&\multicolumn{7}{c}{Source}\cr 
+            & & \uppercase\expandafter{\romannumeral1} &\uppercase\expandafter{\romannumeral2} &\uppercase\expandafter{\romannumeral3} &\uppercase\expandafter{\romannumeral4} &\uppercase\expandafter{\romannumeral5}& Total   \\
+            \hline
+            $D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$                           &FF             &0.32      &0.29       &0.14   &0.41  &0.12  &0.62   \\
+            \hline                                                                                                                                          
+            \multirow{3}{*}{$D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$}                  & $\phi$        &0.49      &0.10       &0.06   &0.07  &0.05  &0.51 \\
+                                                                                        & $\rho$        &0.49      &0.14       &0.08   &0.41  &0.15  &0.68 \\
+                                                                                        & FF            &0.44      &1.13       &0.04   &0.40  &0.06  &1.28 \\
+            \hline                                                                                                                                         
+            \multirow{3}{*}{$D_{s}^{+} \rightarrow S(980)\pi^{+}$}                      & $\phi$        &0.98      &0.25       &0.04   &0.11  &0.04  &1.02    \\
+            %\multirow{3}{*}{$D_{s}^{+} \rightarrow f_{0}(980)\pi^{+}/a_{0}(980)\pi^{+}$}& $\phi$       &0.98      &0.25       &0.06   &0.11 &1.02  &1.02    \\
+                                                                                        & $\rho$        &1.11      &0.17       &0.09   &0.11  &0.20  &1.15 \\
+                                                                                        & FF            &1.16      &0.15       &0.04   &0.09  &0.05  &1.18 \\
+            \hline                                                                                                                                         
+            \multirow{3}{*}{$D_{s}^{+} \rightarrow \bar{K}^{*}_{0}(1430)^{0}K^{+}$}     & $\phi$        &1.02      &0.48       &0.05   &0.21  &0.07  &1.15     \\
+                                                                                        & $\rho$        &1.00      &0.36       &0.15   &0.20  &0.14  &1.10 \\
+                                                                                        & FF            &0.76      &0.35       &0.11   &0.22  &0.11  &0.88 \\
+            \hline                                                                                                                                         
+            \multirow{3}{*}{$D_{s}^{+} \rightarrow f_{0}(1710)\pi^{+}$}                 & $\phi$        &0.31      &0.25       &0.04   &0.14  &0.13  &0.45 \\
+                                                                                        & $\rho$        &1.17      &1.23       &0.09   &0.11  &0.09  &1.70 \\
+                                                                                        & FF            &0.71      &1.21       &0.04   &0.16  &0.04  &1.42 \\
+            \hline                                                                                                                                         
+            \multirow{3}{*}{$D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$}                 & $\phi$        &2.66      &0.27       &0.12   &0.09  &0.21  &2.68  \\
+                                                                                        & $\rho$        &1.01      &0.32       &0.21   &0.09  &0.04  &1.06 \\
+                                                                                        & FF            &0.42      &0.30       &0.15   &0.06  &0.13  &0.56 \\
+            \hline\hline
+        \end{tabular}  
+    \end{table*}  
+
+\begin{table*}[htbp]
+    \caption{The final results of the magnitudes, phases and fit fractions for the six amplitudes. The first and second uncertainties are the statistical and systematic uncertainties, respectively.}
+    \label{final-result}
+    \begin{center}
+        \begin{tabular}{ccccc}
+            \hline\hline
+            Amplitude & Magnitude  & Phase  & Fit fractions (\%) & Significance ($\sigma$)\\
+            \hline
+            $D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$              & 1.0 (fixed)             & 0.0 (fixed)                & 48.3$\pm$0.9$\pm$0.6    &  $> 20$\\
+            $D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$                      & 1.09$\pm$0.02$\pm$0.01 & 6.22$\pm$0.07$\pm$0.04    & 40.5$\pm$0.7$\pm$0.9      &  $> 20$ \\
+            $D_{s}^{+} \rightarrow S(980)\pi^{+}$                          & 2.88$\pm$0.14$\pm$0.16 & 4.77$\pm$0.07$\pm$0.07    & 19.3$\pm$1.7$\pm$2.0      & $>20$  \\
+            %$D_{s}^{+} \rightarrow f_{0}(980)\pi^{+}/a_{0}(980)\pi^{+}$    & 2.88$\pm$0.14$\pm$0.16 & 4.77$\pm$0.07$\pm$0.07    & 19.3$\pm$1.7$\pm$2.0\\
+            $D_{s}^{+} \rightarrow \bar{K}^{*}_{0}(1430)^{0}K^{+}$         & 1.26$\pm$0.14$\pm$0.15 & 2.91$\pm$0.20$\pm$0.23    & 3.0$\pm$0.6$\pm$0.5   & 8.6\\
+            $D_{s}^{+} \rightarrow f_{0}(1710)\pi^{+}$                     & 0.79$\pm$0.08$\pm$0.14 & 1.02$\pm$0.12$\pm$0.05    & 1.9$\pm$0.4$\pm$0.6   & 9.2\\
+            $D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$                     & 0.58$\pm$0.08$\pm$0.08 & 0.59$\pm$0.17$\pm$0.46    & 1.2$\pm$0.4$\pm$0.2   & 6.4\\
+            \hline\hline
+        \end{tabular}
+    \end{center}
+\end{table*}
+
+%------------------------------------------------------------------------------
+\section{Branching Fraction}
+\label{BF}
+\subsection{Efficiency and Data Yields}
+After the selection described in Sec.~\ref{chap:event_selection}, DT method is also used to perform the branching fraction measurement.
+We use the same eight tag modes as that in Sec.~\ref{AA}.
+For each tag mode, if there are duplicate tag $D_{s}$ candidates in an event, only the candidate with $M_{rec}$ closest to the nominal mass of $D_{s}^{*}$~\cite{PDG} is retained.
+Then the ST yields can be obtained by the fits to the $D_{s}$ invariant mass distributions, as shown in Fig.~\ref{SingleTagFit}.
+In the fit, the mass windows of the tag modes are set to be the same as the Ref.~\cite{Doc-DB-630-v35}.
+The signal shape is modeled as MC shape convoluted with a Gaussian function, while background is parameterized as the second-order Chebychev polynomial.
+The fits to generic MC are performed to estimate the corresponding ST efficiencies.  
+The ST yields ($Y_{ST}$) and ST efficiencies ($\epsilon_{ST}$) are listed in Table~\ref{ST-eff}.
+
+\begin{table*}[htbp]
+    \caption{ The ST yields ($Y_{ST}$) and ST efficiencies ($\epsilon_{ST}$). 
+    The mass windows use the results in Ref.~\cite{Doc-DB-630-v35}. 
+The BFs of the sub-particle ($K_{S}^{0}$, $\pi^{0}$, $\eta$ and $\eta^{'}$) decays are not included.}
+    \label{ST-eff}
+    \begin{center}
+        \begin{tabular}{cccc}
+            %\hline\hline
+            \hline\hline
+            Tag mode & Mass window (GeV/$c^{2}$)  & $Y_{ST}$  & $\epsilon_{ST}(\%)$\\
+            \hline
+            $D_{s}^{-} \rightarrow K_{S}^{0}K^{-}$                          & [1.948, 1.991]    & $31987\ \pm\ 314$               & 49.09$\ \pm\ $0.07\\
+            $D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}$                       & -                 & $141189\ \pm\ 643$              & 42.17$\ \pm\ $0.03\\
+            %$D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}$                       & [1.900, 2.030]    & $135273\ \pm\ 609$              & 42.17$\ \pm\ $0.03\\
+            $D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}\pi^{0}_{\gamma\gamma}$                & [1.947, 1.982]    & $37899\ \pm\ 1739$              & 10.61$\ \pm\ $0.03\\
+            $D_{s}^{-} \rightarrow K_{S}^{0}K^{-}\pi^{+}\pi^{-}$            & [1.958, 1.980]    & $7999\ \pm\ 236$               & 19.30$\ \pm\ $0.12\\
+            $D_{s}^{-} \rightarrow K_{S}^{0}K^{+}\pi^{-}\pi^{-}$            & [1.953, 1.983]    & $15723\ \pm\ 290$               & 22.72$\ \pm\ $0.06\\
+            $D_{s}^{-} \rightarrow \pi^{-}\pi^{-}\pi^{+}$                   & [1.952, 1.984]    & $38157\ \pm\ 873$              & 56.94$\ \pm\ $0.17\\
+            $D_{s}^{-} \rightarrow \pi^{-}\eta_{\pi^{+}\pi^{-}\eta_{\gamma\gamma}}^{'}$          & [1.940, 1.996]    & $8009\ \pm\ 142$               & 20.43$\ \pm\ $0.06\\
+            $D_{s}^{-} \rightarrow K^{-}\pi^{+}\pi^{-}$                     & [1.953, 1.983]    & $17112\ \pm\ 561$               & 47.18$\ \pm\ $0.22\\
+            %\hline\hline
+            \hline\hline
+        \end{tabular}
+    \end{center}
+\end{table*}
+
+\begin{figure*}[!htbp]
+ \centering
+ \includegraphics[width=0.35\textwidth]{plot/DsTag400_Mass_data.eps}
+ \includegraphics[width=0.35\textwidth]{plot/DsTag401_Mass_data.eps}
+ \includegraphics[width=0.35\textwidth]{plot/DsTag404_Mass_data.eps}
+ \includegraphics[width=0.35\textwidth]{plot/DsTag405_Mass_data.eps}
+ \includegraphics[width=0.35\textwidth]{plot/DsTag406_Mass_data.eps}
+ \includegraphics[width=0.35\textwidth]{plot/DsTag421_Mass_data.eps}
+ \includegraphics[width=0.35\textwidth]{plot/DsTag460_Mass_data.eps}
+ \includegraphics[width=0.35\textwidth]{plot/DsTag502_Mass_data.eps}
+ \caption{Fits to the $m_{tag}$ distributions of data. 
+ The points with error bars indicate data and the solid lines indicate the fit. 
+ Red short-dashed lines are signal, violet long-dashed lines are background. 
+ The region within the red arrows denotes the signal region. 
+% In the fit to the $D_{s}$ mass for $D_{s}^{-} \rightarrow K_{S}^{0}K^{-}$, 
+% the black dashed line shows the shape of $D^{-} \rightarrow K_{S}^{0}\pi^{-}$, 
+% which contributes to the peaking background in the corresponding mass window.i
+ }
+\label{SingleTagFit}
+\end{figure*}
+
+After the best candidates of ST $D_{s}^{-}$ mesons is identified, we search for the $D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$.
+Only one DT $D_{s}^{+}$ candidate, if exists, with the minimum average mass ($aM$) of tag $D_{s}$ and signal $D_{s}^{+}$ is retained for each tag mode in an event.
+The DT efficiencies, listed in Table~\ref{DT-eff} are obtained based on the AA signal MC.
+
+\begin{table}[htbp]
+    \caption{ The DT efficiencies ($\epsilon_{DT}$).The BFs of the sub-particle ($K_{S}^{0}$, $\pi^{0}$, $\eta$ and $\eta^{'}$) decays are not included.}
+    \label{DT-eff}
+    \begin{center}
+        \begin{tabular}{cccc}
+            \hline\hline
+            %\hline\hline
+            Tag mode   & $\epsilon_{DT}(\%)$\\
+            \hline
+            $D_{s}^{-} \rightarrow K_{S}^{0}K^{-}$                                                   & 19.77$\pm$0.14\\
+            $D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}$                                                & 17.41$\pm$0.06\\
+            $D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}\pi^{0}$                                         &  4.69$\pm$0.03\\
+            $D_{s}^{-} \rightarrow K_{S}^{0}K^{-}\pi^{+}\pi^{-}$                                     &  8.04$\pm$0.11\\
+            $D_{s}^{-} \rightarrow K_{S}^{0}K^{+}\pi^{-}\pi^{-}$                                     &  9.35$\pm$0.09\\
+            $D_{s}^{-} \rightarrow \pi^{-}\pi^{-}\pi^{+}$                                            & 23.72$\pm$0.15\\
+            $D_{s}^{-} \rightarrow \pi^{-}\eta_{\pi^{+}\pi^{-}\eta_{\gamma\gamma}}^{'}$               &  8.70$\pm$0.11\\
+            $D_{s}^{-} \rightarrow K^{-}\pi^{+}\pi^{-}$                                              & 19.68$\pm$0.13\\
+            \hline\hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+As $D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}$ is not only our signal mode but also one of our tag modes, we divide the events into two categories:
+
+\begin{itemize}
+    \item[-] Cat. A: Tag $D_{s}$ decays to tag modes except $D_{s}^{-} \rightarrow K^{+}K^{-}\pi^{-}$. The generic MC sample with the signal removed shows no peaking background around the fit range of $1.90 < M_{sig} < 2.03 \ {\rm GeV}/c^{2}$.
+        Thus, the double tag yield is determined by the fit to $M_{sig}$, shown in Fig.~\ref{DT-fit}(a). The background is described with second-order Chebychev polynomial. The double tag yield is $3497\pm64$. 
+    \item[-] Cat. B: Tag $D_{s}$ decays to $K^{+}K^{-}\pi^{+}$. As both of the two $D_{s}$ mesons decay to our signal modes, we fit $dM$ (the mass of $D_{s}$ at signal side minus that of tag side), which is shown in Fig.~\ref{DT-fit}(b). 
+        Here, the background is described by a second-order Chebychev polynomial. The double tag yield is $1651\pm42$. 
+\end{itemize}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{plot/DT-A.eps}
+    \includegraphics[width=0.4\textwidth]{plot/DT-B.eps}
+    \caption{Fit of (a)Cat. A and (b)Cat. B.
+        We fit $M_{sig}$ and $dM$ for Cat. A and Cat. B, respectively. The signal shapes are the corresponding simulated shapes convoluted with a Gaussian function and 
+    the background shapes are described with second-order Chebychev polynomial.}
+    \label{DT-fit}
+\end{figure}
+\subsection{Tagging Technique and Branching Fraction}
+For the DT sample with only one tag mode, we have
+\begin{equation}
+    Y_{ST} = 2N_{D_{s}^{+}D_{s}^{-}}\mathcal{B}_{tag}\epsilon_{tag}, \label{eq-ST}
+\end{equation}
+
+\begin{equation}
+    \begin{array}{lr}
+        N_{sig}^{obsA}=2N_{D_{s}^{+}D_{s}^{-}}\mathcal{B}_{tag}\mathcal{B}_{sig}\epsilon_{tag,sig}  , &\text{for Cat. A} \\
+        N_{sig}^{obsB}=N_{D_{s}^{+}D_{s}^{-}}\mathcal{B}_{tag}\mathcal{B}_{sig}\epsilon_{tag,sig}  ,  &\text{  for Cat. B}  
+    \end{array}
+    \label{eq-DT}
+\end{equation}
+where $N_{D_{s}^{+}D_{s}^{-}}$ is the total number of $D_{s}^{*\pm}D_{s}^{\mp}$ produced from $e^{+}e^{-}$ collision; $Y_{ST}$ is the number of observed tag modes; $N_{sig}^{obsA}$ and $N_{sig}^{obsB}$ are the number of observed signals for Cat. A and Cat. B, respectively; $\mathcal{B}_{tag}$ and $\mathcal{B}_{sig}$ are the branching fractions of a specific tag mode and the signal mode, respectively; $\epsilon_{tag}$ is the efficiency to reconstruct the tag mode; $\epsilon_{tag,sig}$ is the efficiency to reconstruct both the tag and signal decay modes.
+
+Using the above equations, it's easy to obtain:
+\begin{equation}
+\mathcal{B}_{sig} = \frac{N_{sig}^{obsA}+2N_{sig}^{obsB}}{\begin{matrix}\sum_{\alpha} Y_{ST}^{\alpha}\epsilon_{tag,sig}^{\alpha}/\epsilon_{tag}^{\alpha}\end{matrix}}, \label{BR-formula}
+\end{equation}
+where the yields $N_{sig}^{obsA}$, $N_{sig}^{obsB}$ and $Y_{ST}^{\alpha}$ are obtained from data, while $\epsilon_{tag}$ and $\epsilon_{tag,sig}$ can be obtained from the appropriate MC samples, where $\alpha$ represents the tag modes.
+
+\subsection{Systematic Uncertainty}
+The following sources are taken in account to calculate systematic uncertainties.
+
+\begin{itemize}
+    \item Uncertainty in the number of ST $D_{s}^{-}$ candidates. We perform alternative fits with different background shapes, signal shapes and fit ranges to obtain the uncertainties related to the corresponding factors.
+        We change the background shape from the second-order Chebychev polynomial to a third-order Chebychev polynomial and the relative change of branching fraction is 0.18\%.
+        The systematic in signal shape is determined to be 0.16\% by performing an alternative fit without convoluting the Gaussian resolution function.
+        For fit range, we vary the fit range from $[1.90, 2.03]$ GeV/$c^{2}$ to $[1.90, 2.02]$ GeV/$c^{2}$ and the relative difference of branching fraction is 0.24\%.
+        According to Table~\ref{ST-eff}, the total ST yields of the eight tag modes is  298487 $\pm$ 2186. Then the uncertainty due to background fluctuation is 2186/298487 = 0.73\%.
+        The quadrature sum of these terms, that is the uncertainty in the number of ST $D_{s}^{-}$ candidates, is 0.84\%. 
+
+    \item Signal shape. The systematic uncertainty due to the signal shape is studied with the fit without the Gaussian function convoluted, the double tag yield shift is taken as the related effect. 
+
+    \item Background shape and fit range. For background shape and the fit range in the fit, the third-order Chebychev polynomial is used to replace the nominal ones and the fit  range of $[1.90, 2.03]$ GeV/$c^{2}$ for Cat. A and $[-0.13, 0.13]$ GeV/$c^{2}$ for Cat. B are changed to $[1.90, 2.02]$ GeV/$c^{2}$ and $[-0.14, 0.14]$ GeV/$c^{2}$ respectively. 
+        %The relative branching fraction change is taken as the related effect. 
+        The largest branching fraction shift is taken as the related effect.
+
+    \item Fit bias. The possible bias is estimated by the input/output check using the round 30-40 of DIY MC, which is shown in Table~\ref{BR-IO}. 
+        The estimated mean ($\mu_{\mathcal{B}}$) and its uncertainty ($\sigma_{\mu}$) is calculated with the following formulas:
+        \begin{equation}
+        \mu_{\mathcal{B}} = \frac{\begin{matrix}\sum_{i}\frac{\mu_{i}}{\sigma_{i}^{2}}\end{matrix}}{\begin{matrix}\sum_{i}\frac{1}{\sigma_{i}^{2}}\end{matrix}}, \ \ \ \ \sigma_{\mu}^{2}=\begin{matrix}\sum_{i}\frac{1}{\sigma_{i}^{2}}\end{matrix},
+            \label{BR-Combined}
+        \end{equation}
+        where $\mu_{i}$ and $\sigma_{i}$ are the measured branching fraction value and its statistical uncertainty for the sample i. The combined result of the round 30-40 is $\mu_{\mathcal{B}} = (5.462 \pm 0.021)\%$. 
+        The relative change compared to the input value is $0.1\%$, which is very small and negligible.
+
+        \begin{table}[htbp]
+            \caption{Input/output check using the round 30-40 of DIY MC.}
+            \label{BR-IO}
+            \begin{center}
+                \begin{tabular}{cccc}
+                    \hline\hline
+                    Round   &$\mathcal{B}(D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+})$(\%) \\
+                    \hline
+                    31                                  & $5.562 \pm 0.076$\\ 
+                    32                                  & $5.497 \pm 0.076$\\
+                    33                                  & $5.407 \pm 0.076$\\
+                    34                                  & $5.636 \pm 0.078$\\
+                    35                                  & $5.490 \pm 0.076$\\
+                    36                                  & $5.397 \pm 0.076$\\
+                    37                                  & $5.369 \pm 0.076$\\
+                    38                                  & $5.490 \pm 0.077$\\
+                    39                                  & $5.353 \pm 0.075$\\
+                    40                                  & $5.435 \pm 0.076$\\
+                    \hline
+                    Combined result                               & $5.462 \pm 0.021$\\
+                    \hline\hline
+                \end{tabular}
+            \end{center}
+        \end{table}
+
+    \item $K^{\pm}$ and $\pi^{\pm}$ Tracking/PID efficiency. Based on the works~\cite{PID} and~\cite{Tracking} by Xingyu Shan and Sanqiang Qu, etc. 
+        we find that it's enough to assign $1.1\%$ , $0.4\%$, $1.1\%$ and $0.2\%$ as the systematic uncertainty for $K^{\pm}$ PID, $\pi^{\pm}$ PID,  $K^{\pm}$ tracking, $\pi^{\pm}$ tracking efficiencies, respectively.
+
+\item MC statistics. The uncertainty of MC statistics is obtained by $\sqrt{ \begin{matrix} \sum_{i} f_{i}{(\frac{\delta_{\epsilon_{i}}}{\epsilon_{i}})}^{2}\end{matrix}}$, where $f_{i}$ is the tag yield fraction and $\epsilon_{i}$ is the signal efficiency of tag mode $i$.
+    \item Dalitz model. The uncertainty from the Dalitz model is estimated as the change of efficiency when the Dalitz model parameters are varied by their uncertainties.
+\end{itemize}
+
+All of the systematic uncertainties mentioned above are summarized in Table~\ref{BF-Sys} and uncertainties in the table are relative shifts.
+\begin{table}[htbp]
+    \caption{Systematic uncertainties of branching fraction.}
+    \label{BF-Sys}
+    \begin{center}
+        \begin{tabular}{cccc}
+            %\hline\hline
+            \hline\hline
+            Source   & Sys. Uncertainty (\%)\\
+            \hline
+            Number of $D_{s}^{-}$               & 0.8 \\
+            Signal shape                        & 0.5 \\
+            Background shape and fit range      & 0.9 \\
+            %Fit bias                            & 0.1 \\
+            $K^{\pm}$ and $\pi^{\pm}$ PID efficiency            & 1.5 \\
+            $K^{\pm}$ and $\pi^{\pm}$ Tracking efficiency       & 1.3 \\
+            MC statistics                       & 0.2 \\
+            \hline
+            Dalitz model                               & 0.5 \\
+            \hline
+            total                               & 2.4 \\
+            \hline\hline
+            %\hline\hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+%------------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------------
+\section{Conclusion}
+\label{CONLUSION}
+This analysis presents the amplitude analysis of the decay $D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$.
+Table~\ref{final-comp} is a comparison of amplitude analysis between BABAR, CLEO-c and this analysis. Our results are roughly consistent with those of BABAR and CLEO-c.
+For the fit fraction of $D_{s}^{+} \rightarrow f_{0}(980)\pi^{+}/a_{0}(980)\pi^{+}$, we tend to agree with the result of BABAR.
+\begin{table*}[htbp]
+    \caption{Comparison of fit fraction between BABAR, CLEO-c and this amplitude analysis.}
+    \label{final-comp}
+    \begin{center}
+        \begin{tabular}{cccc}
+            \hline\hline
+            Amplitude & BABAR  & CLEO-c  & This Analysis\\
+            \hline
+            $D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$              & 47.9$\pm$0.5$\pm$0.5  & 47.4$\pm$1.5$\pm$0.4& 48.3$\pm$0.9$\pm$0.6 \\
+            $D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$                      & 41.4$\pm$0.8$\pm$0.5  & 42.2$\pm$1.6$\pm$0.3& 40.5$\pm$0.7$\pm$0.9 \\
+            $D_{s}^{+} \rightarrow S(980)\pi^{+}$    & 16.4$\pm$0.7$\pm$2.0  & 28.2$\pm$1.9$\pm$1.8& 19.3$\pm$1.7$\pm$2.0 \\
+            %$D_{s}^{+} \rightarrow f_{0}(980)\pi^{+}/a_{0}(980)\pi^{+}$    & 16.4$\pm$0.7$\pm$2.0  & 28.2$\pm$1.9$\pm$1.8& 19.3$\pm$1.7$\pm$2.0 \\
+            $D_{s}^{+} \rightarrow \bar{K}^{*}_{0}(1430)^{0}K^{+}$         & 2.4$\pm$0.3$\pm$1.0   & 3.9$\pm$0.5$\pm$0.5 & 3.0$\pm$0.6$\pm$0.5  \\
+            $D_{s}^{+} \rightarrow f_{0}(1710)\pi^{+}$                     & 1.1$\pm$0.1$\pm$0.1   & 3.4$\pm$0.5$\pm$0.3 & 1.9$\pm$0.4$\pm$0.6  \\
+            $D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$                     & 1.1$\pm$0.1$\pm$0.2   & 4.3$\pm$0.6$\pm$0.5 & 1.2$\pm$0.4$\pm$0.2  \\
+            $\begin{matrix}\sum FF(\%)\end{matrix}$                          & 110.2$\pm$0.6$\pm$2.0 & 129.5$\pm$4.4$\pm$2.0 & 114.2$\pm$1.7$\pm$2.3\\
+                $\chi^{2}/NDF$                                                  & $\frac{2843}{2305-14}=1.2$ & $\frac{178}{117}=1.5$ & $\frac{290}{291-10-1}=1.04$\\
+            Events                                                         &$96307\pm369$(purity$\ 95\%$)          &$14400$(purity$\ 85\%$)  &$4381$(purity$\ 99.6\%$)\\
+            \hline\hline
+        \end{tabular}
+    \end{center}
+\end{table*}
+
+    In this analysis, as $a_{0}(980)$ and $f_{0}(980)$ overlap and parameters of $f_{0}(980)$ is not well measured, 
+    we have extracted the $\mathcal{S}$-wave lineshape in the low end of $K^{+}K^{-}$ mass spectrum with the model independent method.
+
+    We also measure the branching fraction $\mathcal{B}(D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+})=(5.47\pm0.07_{stat.}\pm0.13_{sys.})\%$.
+    As is shown in Table~\ref{BF-Compare}, the branching fraction of this analysis has the best precision.
+    \begin{table}[htbp]
+        \caption{Comparisons of branching fraction between BABAR, CLEO-c and this analysis.}
+        \label{BF-Compare}
+        \begin{center}
+            \begin{tabular}{cc}
+                \hline\hline
+                $\mathcal{B}$ $(D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+})(\%)$ & Collaboration  \\
+                \hline
+                $5.55\pm0.14_{stat.}\pm0.13_{sys.}$    &  CLEO-c ~\cite{CLEO-BF}                     \\
+                $5.06\pm0.15_{stat.}\pm0.21_{sys.}$    &  BELLE~\cite{BELL-BF}                     \\
+                $5.78\pm0.20_{stat.}\pm0.30_{sys.}$    &  BABAR~\cite{BABAR-BF}                    \\
+                $5.47\pm0.08_{stat.}\pm0.13_{sys.}$                     &  BESIII(this analysis)    \\
+                %$\mathcal{B}(D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+})(\%)$ &   $5.47\pm0.07_{stat.}\pm0.11_{sys.}$ &   $5.55\pm0.14_{stat.}\pm0.13_{sys.}$ &   $5.47\pm0.07_{stat.}\pm0.11_{sys.}$ 
+                \hline\hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+    
+    We also obtained the branching fractions for the intermediate processes, listed in Table~\ref{total-BF}.
+    \begin{table}[htbp]
+        \caption{The branching fractions measured in this analysis.}
+        \label{total-BF}
+        \begin{center}
+            \begin{tabular}{cc}
+                \hline\hline
+                Process & Branching fractions (\%)\\
+                \hline
+                $D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$, $\bar{K}^{*}(892)^{0} \rightarrow K^{-}\pi^{+}$              & $2.64\ \pm\ 0.06_{stat.}\ \pm\ 0.07_{sys.}$  \\
+                $D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$, $\phi(1020) \rightarrow K^{+}K^{-}$                                  & $2.21\ \pm\ 0.05_{stat.}\ \pm\ 0.07_{sys.}$  \\
+                $D_{s}^{+} \rightarrow S(980)\pi^{+}$, $S(980) \rightarrow K^{+}K^{-}$                                          & $1.05\ \pm\ 0.04_{stat.}\ \pm\ 0.06_{sys.}$  \\
+                $D_{s}^{+} \rightarrow \bar{K}^{*}_{0}(1430)^{0}K^{+}$, $\bar{K}^{*}_{0}(1430)^{0} \rightarrow K^{-}\pi^{+}$    & $0.16\ \pm\ 0.03_{stat.}\ \pm\ 0.03_{sys.}$  \\
+                $D_{s}^{+} \rightarrow f_{0}(1710)\pi^{+}$ ,$f_{0}(1710) \rightarrow K^{+}K^{-}$                                & $0.10\ \pm\ 0.02_{stat.}\ \pm\ 0.03_{sys.}$  \\
+                $D_{s}^{+} \rightarrow f_{0}(1370)\pi^{+}$ ,$f_{0}(1370) \rightarrow K^{+}K^{-}$                                & $0.07\ \pm\ 0.02_{stat.}\ \pm\ 0.01_{sys.}$  \\
+                $D_{s}^{+} \rightarrow K^{+}K^{-}\pi^{+}$ total branching fraction                                              & $5.47\ \pm\ 0.08_{stat.}\ \pm\ 0.13_{sys.}$ \\
+                \hline\hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+    According to $\mathcal{B}(D_{s}^{+} \rightarrow a_{0}(980)\pi^{+}, a_{0}(980) \rightarrow \pi^{0}\eta)$ measured in the Ref.~\cite{Doc-DB-682-v7}, we can obtain $\mathcal{B}(D_{s}^{+} \rightarrow a_{0}(980)\pi^{+}, a_{0}(980) \rightarrow K^{+}K^{-})$ is about 0.14\%, which is much less than $\mathcal{B}(D_{s}^{+} \rightarrow S(980)\pi^{+})$ listed in Table~\ref{total-BF}. 
+    We can see that $\mathcal{B}(D_{s}^{+} \rightarrow S(980)\pi^{+})$ measured in this analysis is not inconsistent with the one obtained in the Dalitz plot analysis of $D_{s}^{+} \rightarrow \pi^{+}\pi^{0}\eta$~\cite{Doc-DB-682-v7}.
+    With $\mathcal{B}(\bar{K}^{*}(892)^{0} \rightarrow K^{-}\pi^{+})$ and $\mathcal{B}(\phi(1020) \rightarrow K^{+}K^{-})$ from PDG~\cite{PDG}, we can obtain $\mathcal{B}(D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}) = (3.94\ \pm\ 0.12)\%$ and $\mathcal{B}(D_{s}^{+} \rightarrow \phi(1020)\pi^{+}) = (4.60\ \pm\ 0.17)\%$.
+    The comparison of  $\mathcal{B}(D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+})$ and $\mathcal{B}(D_{s}^{+} \rightarrow \phi(1020)\pi^{+})$ between this analysis and some theory predictions~\cite{PRD93-114010} is listed in Table~\ref{theory-prediction}.
+    Our results are consistent with theory predictions based on solutions (A1), (S4) and (pole) listed in Table~\ref{theory-prediction}.
+    \begin{table*}[htbp]
+        \caption{The comparison of $\mathcal{B}(D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+})$ and $\mathcal{B}(D_{s}^{+} \rightarrow \phi(1020)\pi^{+})$ between this analysis and some theory predictions.
+            $\mathcal{B}(exp)$ is the corresponding result of this analysis.  $\mathcal{B}(A1)$, $\mathcal{B}(S4)$, $\mathcal{B}(pole)$ and $\mathcal{B}(FAT[mix])$ are theory predictions~\cite{PRD93-114010}. 
+        }
+        \label{theory-prediction}
+        \begin{center}
+            \begin{tabular}{cccccccc}
+                \hline\hline
+                Mode & $\mathcal{B}(exp)$ (\%)   & $\mathcal{B}(A1)$ (\%)& $\mathcal{B}(S4)$ (\%)&  $\mathcal{B}(pole)$ (\%)&$\mathcal{B}(FAT[mix])$ (\%)&\\
+                $D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$           & $3.97\ \pm\ 0.14$    & $3.92\ \pm\ 1.13$  & $3.93\ \pm\ 1.10$  & $4.2\ \pm\ 1.7$  & $4.07$  \\
+                $D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$                   & $4.50\ \pm\ 0.18$    & $4.49\ \pm\ 0.40$  & $4.51\ \pm\ 0.43$  & $4.3\ \pm\ 0.6$  & $3.4$  \\
+                %Mode & $\mathcal{B}(exp)$ (\%)   & $\mathcal{B}(A1)$ (\%)& $\mathcal{B}(S4)$ (\%)& $\mathcal{B}(pole)$ (\%)& $\mathcal{B}(FAT[mix])$ (\%) \\
+                %$D_{s}^{+} \rightarrow \bar{K}^{*}(892)^{0}K^{+}$           & $3.94\ \pm\ 0.12$    & $3.92\ \pm\ 1.13$  & $3.93\ \pm\ 1.10$  & $4.2\ \pm\ 1.7$  & $4.07$\\
+                %$D_{s}^{+} \rightarrow \phi(1020)\pi^{+}$                   & $4.60\ \pm\ 0.17$    & $4.49\ \pm\ 0.40$  & $4.51\ \pm\ 0.43$  & $4.3\ \pm\ 0.6$  & $3.4$\\
+                %\hline
+                \hline\hline
+            \end{tabular}
+        \end{center}
+    \end{table*}
+
+
+\begin{acknowledgements}
+    \label{sec:acknowledgement}
+    \vspace{-0.4cm}
+\end{acknowledgements}
+
+
+%------------------------------------------------------------------------------
+\section{Appendix A: Amplitudes Tested}
+\label{app:tested_modes}
+
+\include{ref}
+
+\end{document}

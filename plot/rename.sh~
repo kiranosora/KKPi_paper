@@ -1,0 +1,5 @@
+for FILE in `ls MIPPWA*`
+do
+    FILE=${FILE/MIPPWA/MIPWA}
+    echo $FILE
+done
